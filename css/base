@@ -1,0 +1,550 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.4/dist/viewport-extra.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+    (function(){
+        let ua = navigator.userAgent
+        
+        let sp = ua.indexOf('iPhone') > -1 ||(ua.indexOf('Android') > -1 && ua.indexOf('Mobile') > -1)
+        
+        new ViewportExtra(sp ? 375 : 1200)
+    })()
+//]]>
+</script>
+
+<style type="text/css">
+/*<![CDATA[*/
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+    * {
+        color: #2D394A;
+        font-family: "M PLUS Rounded 1c";
+        letter-spacing: 0.05em;
+    }
+    
+    .jtpl-content {
+        background-color: #fff;
+    }
+    
+    .j-module.n.j-text,
+    .j-module.n.j-imageSubtitle,
+    .j-module.n.j-htmlCode {
+        padding: 0;
+    }
+    
+    a:hover {
+        opacity: .7;
+    }
+    
+    /*ヘッダーのロゴ*/
+    .jtpl-logo {
+        margin: 0;
+        padding: 15px 0 15px 20px;
+        width: 200px;
+        height: 88px;
+    }
+    .jtpl-logo img {
+        height: 58px;
+        object-fit: contain;
+    }
+    
+    .jtpl-logo:hover {
+        opacity: .7;
+    }
+    
+    /*ヘッダーの幅*/
+    .jtpl-topbar-section {
+        max-width: 100%;
+        height: 88px;
+    }
+    
+    /*ヘッダーのテキスト*/
+    #cc-nav-view-2470085590 > a,
+    #cc-nav-view-2470085490 > a,
+    #cc-nav-view-2470085790 > a,
+    #cc-nav-view-2470085890 > a,
+    #cc-nav-view-2470085990 > a,
+    #cc-nav-view-2470086090 > a,
+    #cc-nav-view-2470087090 > a {
+        transform: rotate(0.03deg); /* シャギーを防ぐ指定 */
+        color: #2D394A;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    
+    /*住まいのご相談ボタン*/
+    #cc-nav-view-2470087090 > a {
+        height: 88px;
+        line-height: 88px;
+        padding: 0 30px;
+        font-size: 2rem;
+        color: #fff;
+        background-color: #F06292;
+    }
+    
+    .jtpl-content__inner,
+    .cc-m-all-wrapper,
+    #cc-m-13720762690 {
+        padding: 0 !important;
+    }
+    
+    .jtpl-breadcrumb {
+        margin: 0;
+    }
+    
+    /*お問い合わせ*/
+    .contact-bg {
+        padding: 70px 0;
+        background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/top-contact-bg.jpg?t=1610542549);
+    }
+    #cc-m-13723681890 {
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+    #cc-m-13723682390 {
+        padding: 0 50px 50px !important;
+        margin: 0 auto;
+        max-width: 1150px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    #contentfooter a {
+        color: #fff;
+    }
+    
+    .jtpl-sidebar.sidebar-options {
+        display: none;
+    }
+    
+    .heading-decoration {
+        display: inline-block;
+        font-size: 2.8rem !important;
+        padding: 70px 0px;
+        text-align: center !important;
+        line-height: 1.5 !important;
+    }
+    .heading-decoration::before {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
+        padding-right: 30px;
+    }
+    .heading-decoration::after {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
+        display: inline-block;
+        transform: scaleX(-1);
+        padding-right: 30px;
+    }
+    
+    .address-fb {
+        padding-left: 30px;
+    }
+    .address-address {
+        margin: 10px 0 30px;
+    }
+    .address-tel {
+        font-size: 4.8rem;
+    }
+    .address-tel span {
+        padding-right: 8px;
+        font-size: 2.8rem;
+    }
+    
+    .address-fax {
+        font-size: 2.2rem;
+    }
+    .address-fax span {
+        padding-right: 8px;
+        font-size: 1.6rem;
+    }
+    
+    .address-mail {
+        display: block;
+        font-size: 2.2rem;
+        margin: 4px 0 8px;
+    }
+    .address-contact {
+        display: inline-block;
+        padding: 10px 30px;
+    }
+    
+    /*お客様の声*/
+    .voice-header {
+        position: relative;
+        padding: 70px 0;
+    }
+    .voice-header h2 {
+        font-size: 2.8rem !important;
+    }
+    .voice-header-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/header-voice.png?t=1609433351');
+        background-repeat: no-repeat;
+        background-position: 52% 50%;
+    }
+    #cc-m-13724777090 {
+        max-width: 1065px;
+        margin: 0 auto 30px;
+        box-sizing: border-box;
+    }
+    #cc-m-13739004490 {
+        max-width: 1065px;
+        margin: 0 auto 70px;
+        box-sizing: border-box;
+    }
+    .voice-myhome {
+        width: 305px;
+        height: 354px;
+        padding: 30px 30px 30px 0;
+    }
+    .voice-reform {
+        width: 305px;
+        height: 410px;
+        padding: 30px 30px 30px 0;
+    }
+    .voice-msg-header {
+        margin-right: -30px;
+        padding-bottom: 30px;
+        font-size: 2rem;
+        transform: rotate(0.03deg);
+    }
+    .voice-msg-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .voice-msg-name p {
+        font-size: 1.8rem;
+        padding: 0 30px 8px;
+        border-bottom: 1px solid #2D394A;
+    }
+    .voice-msg-text {
+        padding: 20px 0 0 30px;
+    }
+    .voice-msg-decoration {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+    }
+    .voice-msg-btn {
+        position: absolute;
+        padding: 10px 30px;
+        right: 30px;
+        bottom: 30px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        /*ヘッダーのロゴ*/
+        .jtpl-logo {
+            padding: 10px 0 10px 20px;
+            height: 68px;
+        }
+        .jtpl-logo img {
+            height: 48px;
+            max-height: 48px;
+        }
+        
+        /*ヘッダー*/
+        .jtpl-topbar-section {
+            height: 68px;
+        }
+        
+        /*ヘッダーナビドロワー*/
+        .jtpl-mobile-navigation.navigation-colors {
+            width: 100%;
+            height: calc(100vh - 68px);
+            padding: 0 20px;
+            z-index: 9999;
+            box-shadow: none;
+        }
+        .j-nav-variant-nested > ul {
+            position: relative;
+            min-height: 100vh;
+            min-height: calc(var(--vh, 1vh) * 100);
+        }
+        .j-nav-variant-nested li {
+            padding: 15px 0 15px;
+        }
+        .j-nav-variant-nested > ul > li > span {
+            display: none;
+        }
+        .j-nav-variant-nested li:last-of-type {
+            position: absolute;
+            width: calc(100% + 40px);
+            padding: 0;
+            left: -20px;
+            bottom: 68px;
+        }
+        .j-nav-variant-nested li:last-of-type a {
+            padding: 20px 0 !important;
+            height: auto !important;
+            text-align: center;
+            font-size: 2rem !important;
+        }
+        
+        /*ヘッダーのアパート情報*/
+        header {
+            position: relative;
+            height: 68px;
+        }
+        .apart-sp {
+            position: absolute;
+            right: 71px;
+            height: 100%;
+            padding: 10px;
+            color: #2D394A !important;
+            font-size: 10px;
+            text-decoration: none;
+            font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+            background-color: #f6f6f6;
+            box-sizing: border-box; 
+        }
+        .apart-sp::before {
+            content: "";
+            display: block;
+            margin: 0 0 2px;
+            height: 33px;
+            background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apart-icon.png?t=1611329457);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /*葉っぱ見出し*/
+        .j-module h2 {
+            font-size: 2.1rem !important;
+        }
+        .heading-decoration {
+            position: relative;
+            padding: 60px 20px !important;
+        }
+        .heading-decoration::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 150px;
+          height: 68px;
+          border-radius: 50%;
+          border: 5px solid #CBE0CB;
+          border-left-color: transparent;
+          border-right-color: transparent;
+          transform: translate(-50%, -50%);
+        }
+        .heading-decoration::after {
+            display: none;
+        }
+        
+        /*お問い合わせ*/
+        #cc-m-13723681890 .heading-decoration::before {
+            top: 54%;
+            height: 100px;
+        }
+        .contact-bg {
+            padding: 40px 20px;
+        }
+        #cc-m-13723682390 {
+            padding: 0 20px 20px !important;
+        }
+        address > img:first-of-type {
+            width: 62%;
+        }
+        .address-fb {
+            padding-left: 0;
+        }
+        .address-address {
+            margin: 5px 0 20px;
+            line-height: 1.5;
+        }
+        .address-tel {
+            font-size: 3rem;
+        }
+        .address-tel span {
+            padding-right: 5px;
+            font-size: 1.6rem;
+        }
+        .address-fax {
+            font-size: 2rem;
+        }
+        .address-fax span {
+            padding-right: 5px;
+        }
+        .address-mail {
+            display: block;
+            font-size: 2rem;
+            margin: 0 0 10px;
+        }
+        .address-contact {
+            margin: 0 0 30px;
+            padding: 10px 30px;
+        }
+        
+        /*お客様の声*/
+        #cc-m-13724777090,
+        #cc-m-13739004490 {
+            margin: 0;
+            padding: 0 40px !important;
+        }
+        #cc-m-13739004490 {
+            margin: 0 0 20px;
+        }
+        .voice-header-decoration {
+            background-position: 50%;
+        }
+        .voice-myhome,
+        .voice-reform {
+            width: 100%;
+            height: auto;
+            margin: 0 0 20px;
+            padding: 20px 20px 20px 0;
+            text-align: right;
+            box-sizing: border-box;
+        }
+        .voice-msg-header {
+            margin-right: -20px;
+            font-size: 2rem;
+        }
+        .voice-msg-name p {
+            padding: 0 20px 8px;
+        }
+        .voice-msg-text {
+            text-align: left;
+            padding: 20px 0 0 20px;
+        }
+        .voice-msg-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 10px;
+            left: 10px;
+            background-size: contain;
+        }
+        .voice-msg-btn {
+            position: static;
+            display: inline-block !important;
+            margin: 40px 0 0;
+        }
+        
+        /*フッター*/
+        .jtpl-footer__inner {
+            padding: 20px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        body {
+            min-width: 1200px;
+        }
+    }  
+        
+    @media screen and (min-width: 768px) and (max-width: 1399px) {
+        .mobile-br {
+            display: none;
+        }
+        /*ヘッダーのテキスト間隔*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+        
+        /*住まいのご相談ボタン*/
+        #cc-nav-view-2470087090 > a {
+            padding: 0 25px;
+            font-size: 1.7rem;
+        }
+    }
+    
+    @media screen and (min-width: 1400px) {
+        .mobile-br {
+            display: none;
+        }
+        /*ヘッダーのテキスト間隔*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            margin-right: 35px;
+        }
+    }
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function() {
+        // スマホ用ヘッダーにアパート情報追加
+        // ヘッダー「住まいのご相談」文言変更
+        if ($(window).width() < 768) {
+            $('header').prepend('<a class="apart-sp" href="https://www.nemoto-k.net/apartment/">賃貸物件<\/a>');
+            $('#cc-nav-view-2470087090 a').text('住まいのご相談');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('a').hasClass('apart-sp')) {
+                $('header').prepend('<a class="apart-sp" href="https://www.nemoto-k.net/apartment/">賃貸物件<\/a>');
+            } else if ($(window).width() > 767 && $('a').hasClass('apart-sp')) {
+                $('.apart-sp').remove();
+            }
+            if ($(window).width() < 768) {
+                $('#cc-nav-view-2470087090 a').text('住まいのご相談');
+            } else {
+                $('#cc-nav-view-2470087090 a').text('住まいのご相談 ➟');
+            }
+        });
+        
+        // お問い合わせのカラム隙間削除
+        $('#cc-matrix-3851947890').parent().css({'padding': '0', 'width': '50%' });
+        $('#cc-matrix-3851947990').parent().css({'width': '50%', 'height': '100%' });
+        $('#cc-m-map-13723701690').children().css('height', '332px');
+        $('#cc-m-map-13723701690 iframe').css('height', '332px');
+        
+        // お問い合わせの背景
+        $('#cc-m-13723681890, #cc-m-13723682390').wrapAll('<div class="contact-bg"><\/div>');
+        
+        // お客様の声カラム隙間
+        $('#cc-matrix-3852298190, #cc-matrix-3857219990').parent().css({'width': 'auto', 'padding-right': '30px'});
+        $('#cc-matrix-3852298390, #cc-matrix-3857220190').parent().css({'width': 'auto', 'padding-right': '30px'});
+        $('#cc-matrix-3852298290, #cc-matrix-3857220090').parent().css({'width': 'auto', 'float': 'left'});
+        
+        // footer作成
+        $('.jtpl-main.cc-content-parent').append('<footer><\/footer>');
+        $('.jtpl-footer.footer-options').appendTo('footer');
+        
+        $('.jtpl-sidebar.sidebar-options').remove();
+        
+        // // スマホメニューバー対応
+        // const setFillHeight = () => {
+        //     let vh = $(window).innerHeight() * 0.01;
+        //     $('html').css('--vh', `${vh}px`);
+        // }
+        // $(window).resize(setFillHeight);
+        // setFillHeight();
+    });
+    
+    // スマホメニューバー対応
+    const setFillHeight = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    window.addEventListener('resize', setFillHeight);
+    setFillHeight();
+//]]>
+</script>
