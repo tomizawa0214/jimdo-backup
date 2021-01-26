@@ -1,0 +1,396 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*横幅1600pxまで*/
+    #content_area > div:nth-child(2) > div:nth-child(n+2):nth-child(-n+6) {
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    } 
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content {
+        background-color: #F6F6F6;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+        background-color: #F6F6F6;
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを非表示*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*サブナビを固定*/
+    .subnavi {
+        position: fixed;
+        padding-top: 88px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi a {
+        display: block;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+    }
+    .subnavi a:first-child {
+        margin-bottom: 40px;
+    }
+    .subnavi span {
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    
+    .lower-header {
+        position: relative;
+        padding: 70px 0;
+        background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consul-top.jpg?t=1610553040);
+        background-position: center;
+    }
+    .lower-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header h1 {
+        position: relative;
+        text-align: center;
+        color: #fff !important;
+        font-size: 4rem !important;
+        font-weight: bold !important;
+        letter-spacing: .1em;
+        z-index: 1;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header p {
+        position: relative;
+        margin-top: 4px;
+        text-align: center;
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        z-index: 1;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*たとえばこんなことでお困りの方～*/
+    .pencil-header {
+        padding: 150px 0 90px;
+    }
+    .pencil-header h2 {
+        position: relative;
+        font-size: 2.8rem !important;
+        font-weight: 500 !important;
+        font-family: 'M PLUS Rounded 1c' !important;
+        line-height: 1.5;
+    }
+    .pencil-header h2::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consultation-pencil-border.png?t=1610515943);
+    }
+    
+    /*各種お悩み*/
+    .trouble-header {
+        padding: 30px 10px;
+        background-color: #fff;
+        border-radius: 10px 10px 0 0;
+    }
+    .trouble-header h3 {
+        text-align: center;
+        color: #008D3F;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .trouble-header h3::before {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consultation-deco.png?t=1610515936);
+        padding-right: 5px;
+    }
+
+    .trouble-header h3::after {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consultation-deco.png?t=1610515936);
+        display: inline-block;
+        transform: scaleX(-1);
+        padding-right: 5px;
+    }
+    #content_area > div:nth-child(2)> div:nth-child(n+3):nth-child(-n+6) .j-module.n.j-imageSubtitle {
+        padding: 0 30px;
+        background-color: #fff;
+    } 
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure {
+        position: relative;
+        text-align: center !important;
+        overflow: hidden;
+        background-color: #fff;
+    }
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    #content_area > div:nth-child(2) > div:nth-child(5) > div:nth-child(3) img,
+    #content_area > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) img {
+        width:auto;
+        height:auto;
+        max-width:100%;
+        max-height:100%;
+    }
+    .trouble-text {
+        margin: 0 0 50px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+    .trouble-text dt {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 0 0 10px;
+        transform: rotate(0.03deg);
+    }
+    .trouble-text dd {
+        margin: 0 0 30px;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+        line-height: 1.7;
+    }
+    #content_area div:nth-child(2) div:nth-child(6) .trouble-text {
+        margin: 0 0 150px;    
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*スマホ用サブナビ*/
+        .subnavi-sp {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+            z-index: 9998;
+            background-color: rgba(45, 57, 74, .6);
+            box-sizing: border-box;
+        }
+        .subnavi-sp a {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f06292;
+            border-radius: 5px;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            padding: 60px 0;
+            background-size: cover;
+            background-position: 55%;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        /*たとえばこんなことでお困りの方～*/
+        .pencil-header {
+            position: relative;
+            padding: 90px 0 80px;
+        }
+        .pencil-header::before {
+            content: "";
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            width: 220px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid #CBE0CB;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            transform: translate(-50%, -50%);
+        }
+        .pencil-header h2 {
+            text-align: center !important;
+            font-size: 2.1rem !important;
+        }
+        .pencil-header h2::before {
+            content: "";
+        }
+    
+        /*各種お悩み*/
+        .trouble-header {
+            padding: 30px 10px;
+        }
+        .trouble-header h3 {
+            font-size: 2rem !important;
+        }
+        .trouble-header h3::before,
+        .trouble-header h3::after {
+            content: "";
+        }
+
+    #content_area > div:nth-child(2)> div:nth-child(n+3):nth-child(-n+6) .j-module.n.j-imageSubtitle {
+        padding: 0 30px;
+        background-color: #fff;
+    } 
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure {
+        position: relative;
+        text-align: center !important;
+        overflow: hidden;
+        background-color: #fff;
+    }
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    #content_area > div:nth-child(2) > div:nth-child(5) > div:nth-child(3) img,
+    #content_area > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) img {
+        width:auto;
+        height:auto;
+        max-width:100%;
+        max-height:100%;
+    }
+    .trouble-text {
+        margin: 0 0 50px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+    .trouble-text dt {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 0 0 10px;
+        transform: rotate(0.03deg);
+    }
+    .trouble-text dd {
+        margin: 0 0 30px;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+        line-height: 1.7;
+    }
+    #content_area div:nth-child(2) div:nth-child(6) .trouble-text {
+        margin: 0 0 150px;    
+    }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1399px) {
+        .trouble-text {
+            height: 600px;
+            box-sizing: border-box; 
+        }
+    }
+    @media screen and (min-width: 1400px) {
+        .trouble-header h3 {
+            font-size: 2.2rem;
+        }
+        .trouble-text {
+            height: 500px;
+            box-sizing: border-box; 
+        }
+    }
+    
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // サブナビを固定
+        if ($(window).width() > 767) {
+            $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よ<br>く<br>あ<br>る<br>質<br>問<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/consultation-of-housing/contact/">お<br>問<br>い<br>合<br>わ<br>せ<br><span>➟<\/span><\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('div').hasClass('subnavi')) {
+                $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よ<br>く<br>あ<br>る<br>質<br>問<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/consultation-of-housing/contact/">お<br>問<br>い<br>合<br>わ<br>せ<br><span>➟<\/span><\/a><\/div>');
+            } else if ($(window).width() < 768 && $('div').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // スマホ用サブナビ
+        if ($(window).width() < 768) {
+            $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よくある質問<\/a><a href="https://www.nemoto-k.net/consultation-of-housing/contact/">お問い合わせ<\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('div').hasClass('subnavi-sp')) {
+                $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よくある質問<\/a><a href="https://www.nemoto-k.net/consultation-of-housing/contact/">お問い合わせ<\/a><\/div>');
+            } else if ($(window).width() > 767 && $('div').hasClass('subnavi-sp')) {
+                $('.subnavi-sp').remove();
+            }
+        });
+        
+        // 賃貸物件一覧のカラム隙間
+        let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
+        $('.cc-m-hgrid-column').css('width', columnWidth);
+        $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
+        $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+        $(window).resize(() => {
+            let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
+            $('.cc-m-hgrid-column').css('width', columnWidth);
+            $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
+            $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+        });
+    });
+//]]>
+</script>

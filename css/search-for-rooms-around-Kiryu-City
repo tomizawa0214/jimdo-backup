@@ -1,0 +1,302 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*横幅1600pxまで*/
+    .j-module.n.j-hgrid  {
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    } 
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content {
+        background-color: #F6F6F6;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを削除*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*トップ画像*/
+    .lower-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100vw * 0.285);
+        background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apart-top.jpg?t=1610815749);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .lower-header-text {
+        width: 100%;
+        padding: 20px 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header-text h1 {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fff !important;
+        font-size: 4rem !important;
+        font-weight: bold !important;
+        letter-spacing: .1em;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header-text p {
+        position: relative;
+        margin-top: 4px;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*賃貸物件一覧*/
+    .heading-decoration {
+        font-size: 3rem !important;
+        padding: 150px 0 70px;
+    }
+    .apart-name {
+        padding: 30px;
+    }
+    .apart-name p {
+        font-size: 2rem;
+    }
+    .apart-name p:first-child {
+        padding: 10px 20px;
+    }
+    #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid > .cc-m-hgrid-column {
+        margin: 0 0 50px;
+    }
+    #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid > .cc-m-hgrid-column .j-module.n.j-imageSubtitle  {
+        padding: 0 30px 10px;
+        background-color: #fff;
+    }
+    #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid > .cc-m-hgrid-column figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid > .cc-m-hgrid-column figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid > .cc-m-hgrid-column img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    .apart-info {
+        padding: 0 30px;
+        background-color: #fff;
+    }
+    .apart-info dl {
+        display: flex;
+        margin: 0;
+        padding: 0 0 20px;
+    }
+    .apart-info dt {
+        width: 150px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    .apart-info dd {
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    .apart-info dd span {
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+        font-size: 2.8rem;
+        color: #F06292;
+        font-weight: bold;
+    }
+    .apart-more {
+        padding: 0 30px 30px;
+        text-align: right;
+        border-radius: 0 0 10px 10px;
+        background-color: #fff;
+    }
+    .apart-more a {
+        color: #008D3F !important;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 2rem;
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            height: 300px;
+            background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apart-top-sp.jpg?t=1610818069);
+            background-size: 500px auto;
+            background-position: 100% 115%;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        /*賃貸物件一覧*/
+        .heading-decoration {
+                padding: 90px 20px 60px !important;
+            }
+        .heading-decoration::before {
+            top: 58%;
+        }
+        .apart-name {
+            padding: 30px 30px 20px;
+        }
+        .apart-name p {
+            font-size: 1.8rem;
+        }
+        .apart-name p:first-child {
+            text-align: center;
+            padding: 5px 20px;
+        }
+        .apart-name p:nth-of-type(2) {
+            margin: 5px 0 0;
+        }
+        .apart-info dl {
+            flex-direction: column;
+        }
+        .apart-info dt {
+            margin: 0 0 5px;
+        }
+        .apart-info > dl:nth-of-type(1) > dt {
+            margin: 0;
+        }
+        .apart-info dd {
+            margin: 0;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        /*現在ページ*/
+        #cc-nav-view-2470085990 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+        }
+        
+        /*ヘッダーホバーアニメーション*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            position: relative;
+            display: inline-block;
+        }
+        #cc-nav-view-2470085590 > a::after,
+        #cc-nav-view-2470085490 > a::after,
+        #cc-nav-view-2470085790 > a::after,
+        #cc-nav-view-2470085890 > a::after,
+        #cc-nav-view-2470086090 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+        }
+        #cc-nav-view-2470085590 > a:hover,
+        #cc-nav-view-2470085490 > a:hover,
+        #cc-nav-view-2470085790 > a:hover,
+        #cc-nav-view-2470085890 > a:hover,
+        #cc-nav-view-2470085990 > a:hover,
+        #cc-nav-view-2470086090 > a:hover {
+            opacity: 1;
+        }
+        #cc-nav-view-2470085590 > a:hover::after,
+        #cc-nav-view-2470085490 > a:hover::after,
+        #cc-nav-view-2470085790 > a:hover::after,
+        #cc-nav-view-2470085890 > a:hover::after,
+        #cc-nav-view-2470086090 > a:hover::after {
+            transform: scale(1, 1);
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1399px) {
+        .apart-name p:first-child {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+        .apart-info {
+            height: 250px;
+        }
+    }
+    @media screen and (min-width: 1400px) {
+         .apart-name {
+            display: flex;
+            align-items: center;
+        }
+        .apart-name p:first-child {
+            margin: 0 20px 0 0;
+        }
+    }
+    
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        
+        // 賃貸物件一覧のカラム隙間
+        let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
+        $('.cc-m-hgrid-column').css('width', columnWidth);
+        $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
+        $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+        $(window).resize(() => {
+            let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
+            $('.cc-m-hgrid-column').css('width', columnWidth);
+            $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
+            $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+        });
+    });
+//]]>
+</script>

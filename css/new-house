@@ -1,0 +1,644 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*横幅1600pxまで*/
+    #cc-m-13726759190,
+    #cc-m-13726781490,
+    #cc-m-13726805390,
+    #cc-m-13726848890,
+    #cc-m-13726927890,
+    #cc-m-13726932190,
+    #cc-m-13726947690,
+    #cc-m-13726948390,
+    #cc-m-13726974790,
+    #cc-m-13726990190,
+    #cc-m-13726994990,
+    #cc-m-13727019690,
+    #cc-m-13727020190,
+    #cc-m-13727021090,
+    #cc-m-13727030890 {
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    } 
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを削除*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*サブナビを固定*/
+    .subnavi {
+        position: fixed;
+        padding-top: 88px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi a {
+        display: block;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+    }
+    .subnavi a:first-child {
+        margin-bottom: 40px;
+    }
+    .subnavi span {
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    
+    .lower-header {
+        position: relative;
+        padding: 70px 0;
+        background-position: center;
+    }
+    .lower-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header h1 {
+        font-size: 4rem !important;
+        letter-spacing: .1em;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header p {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*フルカスタマイズの見出し*/
+    #cc-m-13726758490 {
+        margin: 0 -100px;
+    }
+    .heading-decoration {
+        font-size: 3rem !important;
+        padding: 150px 0 70px;
+    }
+    
+    /*フルカスタマイズのカラム*/
+    #cc-m-13726759190 {
+        padding: 0 0 20px !important;
+    }
+    
+    /*フルカスタマイズのイメージ写真*/
+    #cc-m-13726759390 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13726759390 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-imagesubtitle-image-13726759390 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    /*フルカスタマイズの3カラム*/
+    #cc-m-13726781490 {
+        padding: 0 0 20px !important;
+    }
+    
+    /*フルカスタマイズ3つのイメージ写真*/
+    #cc-m-13726781790 figure,
+    #cc-m-13726782090 figure,
+    #cc-m-13726782190 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13726781790 figure::before,
+    #cc-m-13726782090 figure::before,
+    #cc-m-13726782190 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-imagesubtitle-image-13726781790,
+    #cc-m-imagesubtitle-image-13726782090,
+    #cc-m-imagesubtitle-image-13726782190 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    /*注文住宅とは*/
+    #cc-m-13726805390 {
+        padding: 30px !important;
+        background-color: #f6f6f6;
+    }
+    .custom-home-text h4 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    .custom-home-text p {
+        margin-bottom: 30px;
+    }
+    .flow-btn {
+        display: inline-block;
+        padding: 10px 30px;
+    }
+    
+    /*女性に優しいフルオーダー住宅の勧め*/
+    .pencil-header {
+        padding: 150px 0 90px;
+    }
+    
+    .pencil-header h3 {
+        font-size: 2.8rem !important;
+    }
+    
+    .pencil-deco {
+        background-position: top 150px left 0;
+    }
+    
+    #cc-m-13726927890 {
+        padding: 0px 0 70px !important;
+    }
+    #cc-m-13726932190 {
+        padding: 0px 0 !important;
+    }
+    .fullorder-text h4 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    .fullorder-text p:first-of-type {
+        margin-bottom: 30px;
+    }
+    
+    /*女性に嬉しいフルオーダーのイメージ写真*/
+    #cc-m-13726928090 figure,
+    #cc-m-13726932390 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13726928090 figure::before,
+    #cc-m-13726932390 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-imagesubtitle-image-13726928090,
+    #cc-m-imagesubtitle-image-13726932390 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    /*新耐震基準*/
+    #cc-m-13726948390 {
+        padding: 0 0 70px;
+    }
+    .seismic-standard {
+        display: flex;
+    }
+    .seismic-standard p:first-child {
+        display: inline-block;
+        width: 180px;
+        font-size: 2rem;
+        text-align: center;
+        padding: 10px 0;
+        transform: rotate(0.03deg);
+    }
+    .seismic-standard p:last-child {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 0px 10px;
+    }
+    #cc-m-13726974790 {
+        padding: 0 !important;
+    }
+    #cc-m-13726974890 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13726974890 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-imagesubtitle-image-13726974890 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    /*さまざまなお客様のこだわり*/
+    #cc-m-13726994990,
+    #cc-m-13727019690,
+    #cc-m-13727020190,
+    #cc-m-13727021090 {
+        padding: 0 0 50px;
+    }
+    .commitment {
+        display: flex;
+    }
+    .commitment-content {
+        display: flex;
+        width: calc((100%-50px)/2);
+    }
+    .commitment-content:first-child {
+        margin-right: 25px;
+    }
+    .commitment-content:last-child {
+        margin-left: 25px;
+    }
+    .commitment-content img {
+        display: block;
+        width: 273px;
+        height: 187px;
+        object-fit: cover;
+    }
+    .commitment-text {
+        width: 100%;
+        padding: 30px;
+    }
+    .commitment-text p:first-child {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .commitment-text p:first-child::before {
+        content: '\01f3e1';
+        font-size: 2rem;
+    }
+    #cc-m-13727030890 {
+        padding: 0 100px;
+        text-align: center;
+    }
+    .example-btn {
+        display: inline-block;
+        margin: 50px 0 150px;
+        padding: 10px 30px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*スマホ用サブナビ*/
+        .subnavi-sp {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+            z-index: 9998;
+            background-color: rgba(45, 57, 74, .6);
+            box-sizing: border-box;
+        }
+        .subnavi-sp a {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f06292;
+            border-radius: 5px;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            padding: 60px 0;
+            background-size: cover;
+            background-position: 78%;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        /*こだわるならフルカスタマイズ*/
+        .heading-decoration {
+            padding: 90px 20px 60px !important;
+        }
+        .heading-decoration::before {
+            height: 110px;
+            top: 58%;
+        }
+        #cc-m-13726759390 figure {
+            margin: 0 0 20px;
+        }
+        #cc-m-13726781790,
+        #cc-m-13726782090,
+        #cc-m-13726782190 {
+            margin: 0 -40px;
+        }
+        #cc-m-13726781790 figure,
+        #cc-m-13726782090 figure {
+            margin: 0 0 5px;
+        }
+        #cc-m-13726781490 {
+            padding: 0 !important;
+        }
+        #cc-m-13726805390 {
+            margin: 0 -40px;
+            padding: 30px 50px !important;
+        }
+        .custom-home-text {
+            text-align: center;
+        }
+        .custom-home-text h4 {
+            margin: 0 0 20px;
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+        .custom-home-text p {
+            text-align: left;
+        }
+        #cc-m-imagesubtitle-image-13726805490 {
+            margin: 0 0 30px;
+        }
+    
+        /*女性に優しいフルオーダー住宅の勧め*/
+        .pencil-header {
+            padding: 70px 0;
+        }
+        .pencil-header h3 {
+            font-size: 2rem !important;
+            line-height: 1.5;
+        }
+        .pencil-deco {
+            background-position: top 80px right 0;
+        }
+        #cc-m-13726927890 figure,
+        #cc-m-13726932190 figure {
+            margin: 0 0 20px;
+        }
+        .fullorder-text h4 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+    
+        /*地震災害に備えて*/
+        #cc-m-13726948390 {
+            padding: 0 0 70px;
+        }
+        #cc-m-13726947690 > div > h3 {
+            letter-spacing: 0.02em;
+        }
+        #cc-m-13726948390 {
+            padding: 0 0 20px;
+        }
+        .seismic-standard {
+            flex-direction: column;
+        }
+        .seismic-standard p:first-child {
+            display: block;
+            width: 100%;
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 5px 0;
+        }
+        .seismic-standard p:last-child {
+            display: block;
+            width: auto;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        #cc-m-13726974890 figure {
+            margin: 0 0 20px;
+        }
+    
+        /*さまざまなお客様のこだわり*/
+        #cc-m-13726994990,
+        #cc-m-13727019690,
+        #cc-m-13727020190,
+        #cc-m-13727021090 {
+            padding: 0;
+            margin: 0 -40px;
+        }
+        .commitment {
+            flex-direction: column;
+        }
+        .commitment-content {
+            flex-direction: column;
+            width: 100%;
+        }
+        .commitment-content:first-child {
+            margin-right: 0;
+        }
+        .commitment-content:last-child {
+            margin-left: 0;
+        }
+        .commitment-content img {
+            display: block;
+            width: 100%;
+        }
+        #cc-m-13726994990 > div > div:first-of-type > img {
+            object-position: 0 0;
+        }
+        #cc-m-13726994990 > div > div:nth-of-type(2) > img {
+            object-position: 50% 15%;
+        }
+        .commitment-text {
+            margin: 0 0 20px;
+            padding: 20px 0;
+        }
+        .commitment-text p {
+            margin: 0 40px;
+        }
+        .commitment-text p:first-child {
+            margin-bottom: 5px;
+        }
+        #cc-m-13727030890 {
+            padding: 0;
+            text-align: center;
+        }
+        .example-btn {
+            display: inline-block;
+            margin: 20px 0 90px;
+            padding: 10px 30px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        /*現在ページ*/
+        #cc-nav-view-2470085790 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+        }
+        
+        /*ヘッダーホバーアニメーション*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            position: relative;
+            display: inline-block;
+        }
+        #cc-nav-view-2470085590 > a::after,
+        #cc-nav-view-2470085490 > a::after,
+        #cc-nav-view-2470085890 > a::after,
+        #cc-nav-view-2470085990 > a::after,
+        #cc-nav-view-2470086090 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+        }
+        #cc-nav-view-2470085590 > a:hover,
+        #cc-nav-view-2470085490 > a:hover,
+        #cc-nav-view-2470085790 > a:hover,
+        #cc-nav-view-2470085890 > a:hover,
+        #cc-nav-view-2470085990 > a:hover,
+        #cc-nav-view-2470086090 > a:hover {
+            opacity: 1;
+        }
+        #cc-nav-view-2470085590 > a:hover::after,
+        #cc-nav-view-2470085490 > a:hover::after,
+        #cc-nav-view-2470085890 > a:hover::after,
+        #cc-nav-view-2470085990 > a:hover::after,
+        #cc-nav-view-2470086090 > a:hover::after {
+            transform: scale(1, 1);
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1399px) {
+        .commitment {
+            flex-direction: column;
+        }
+        .commitment-content,
+        .commitment-text {
+            width: 100%;
+        }
+        .commitment-content:first-child {
+            margin: 0 0 25px;
+        }
+        .commitment-content:last-child {
+            margin: 25px 0 0;
+        }
+    }
+    
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // サブナビを固定
+        if ($(window).width() > 767) {
+            $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/new-house/new-construction-example/">新<br>築<br>施<br>行<br>事<br>例<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新<br>築<br>の<br>流<br>れ<br><span>➟<\/span><\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('div').hasClass('subnavi')) {
+                $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/new-house/new-construction-example/">新<br>築<br>施<br>行<br>事<br>例<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新<br>築<br>の<br>流<br>れ<br><span>➟<\/span><\/a><\/div>');
+            } else if ($(window).width() < 768 && $('div').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // スマホ用サブナビ
+        if ($(window).width() < 768) {
+            $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/new-house/new-construction-example/">新築施行事例<\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新築の流れ<\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('div').hasClass('subnavi-sp')) {
+                $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/new-house/new-construction-example/">新築施行事例<\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新築の流れ<\/a><\/div>');
+            } else if ($(window).width() > 767 && $('div').hasClass('subnavi-sp')) {
+                $('.subnavi-sp').remove();
+            }
+        });
+        
+        // フルカスタマイズのカラム隙間
+        let columnWidth = ($('#cc-m-13726781490').width() - 40)/3;
+        $(window).resize(() => {
+            let columnWidth = ($('#cc-m-13726781490').width() - 40)/3;
+            $('#cc-matrix-3852985290, #cc-matrix-3852985490, #cc-matrix-3852985390').parent().css('width', columnWidth);
+            $('#cc-matrix-3852985290, #cc-matrix-3852985490').parent().css('padding-right', '20px');
+        });
+        $('#cc-matrix-3852985290, #cc-matrix-3852985490, #cc-matrix-3852985390').parent().css('width', columnWidth);
+        $('#cc-matrix-3852985290, #cc-matrix-3852985490').parent().css('padding-right', '20px');
+        
+        // スマホ用に位置入れ替え
+        if ($(window).width() < 768) {
+            $('#cc-m-13726805390 .cc-m-hgrid-column.last').after($('#cc-m-13726805390 .cc-m-hgrid-column'));
+            $('#cc-m-13726932190 .cc-m-hgrid-column.last').after($('#cc-m-13726932190 .cc-m-hgrid-column'));
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768) {
+                $('#cc-m-13726805390 .cc-m-hgrid-column.last').after($('#cc-m-13726805390 .cc-m-hgrid-column'));
+                $('#cc-m-13726932190 .cc-m-hgrid-column.last').after($('#cc-m-13726932190 .cc-m-hgrid-column'));
+            }
+        });
+    });
+//]]>
+</script>

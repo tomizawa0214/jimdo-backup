@@ -1,0 +1,327 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*パンくずリスト非表示*/
+    .jtpl-breadcrumb.breadcrumb-options {
+        display: none;
+    }
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+        background-color: #fff;
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを削除*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*サブナビを固定*/
+    .subnavi {
+        position: fixed;
+        padding-top: 88px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi a {
+        display: block;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+    }
+    .subnavi a:first-child {
+        margin-bottom: 40px;
+    }
+    .subnavi span {
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    
+    .lower-header {
+        position: relative;
+        padding: 70px 0;
+        background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consul-top.jpg?t=1610553040);
+        background-position: center;
+    }
+    .lower-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header h1 {
+        position: relative;
+        text-align: center;
+        color: #fff !important;
+        font-size: 4rem !important;
+        font-weight: bold !important;
+        letter-spacing: .1em;
+        z-index: 1;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header p {
+        position: relative;
+        margin-top: 4px;
+        text-align: center;
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        z-index: 1;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*フォーム*/
+    .j-module.n.j-formnew {
+        max-width: 962px;
+        margin: 150px auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .cc-m-form-view-element.cc-m-form-text.cc-m-required,
+    .cc-m-form-view-element.cc-m-form-email.cc-m-required,
+    .cc-m-form-view-element.cc-m-form-textarea.cc-m-required {
+        display: flex;
+        align-items: center;
+        padding: 0 0 10px;
+    }
+    .cc-m-form-view-sortable label {
+        max-width: none !important;
+        margin: 0 18px 0 0;
+        padding: 30px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        background-color: #F6F6F6;
+        white-space: nowrap;
+    }
+    .cc-m-form-view-sortable label div {
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    .cc-m-form-view-sortable label div::before {
+        content: "必須";
+        margin: 0 10px 0 0;
+        padding: 8px;
+        color: #fff;
+        background-color: #F06292;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+        border-radius: 5px;
+    }
+    .cc-m-form-view-sortable label div::after {
+        display: none;
+    }
+    .cc-m-form-view-element.cc-m-form-text.cc-m-required > div > input,
+    .cc-m-form-view-element.cc-m-form-email.cc-m-required > div > input,
+    .cc-m-form-view-element.cc-m-form-textarea.cc-m-required > div > textarea {
+        width: 550px !important;
+        background-color: #fff;
+        border: 1px solid #A9B7CA !important;
+        border-radius: 10px;
+    }
+    .cc-m-form-view-element.cc-m-form-text.cc-m-required > div > input:focus,
+    .cc-m-form-view-element.cc-m-form-email.cc-m-required > div > input:focus,
+    .cc-m-form-view-element.cc-m-form-textarea.cc-m-required > div > textarea:focus {
+        border: 2px solid #2D394A !important;
+        border-radius: 10px;
+        outline: 0;
+    }
+    .cc-m-form-view-element.cc-m-form-textarea.cc-m-required > div > textarea {
+        height: 300px;
+    }
+    .cc-m-form-view-element.cc-m-form-textarea.cc-m-required label {
+        align-self: top;
+        padding: 30px 30px 290px;
+    }
+    .cc-m-form-view-element.cc-m-form-submit {
+        padding: 60px 0 150px !important;
+    }
+    .cc-m-form-view-element.cc-m-form-submit label {
+        min-height: 0 !important;
+    }
+    .cc-m-form-view-element.cc-m-form-submit > div {
+        text-align: center;
+    }
+    .cc-m-form-view-element.cc-m-form-submit > div > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cc-m-form-view-element.cc-m-form-submit > div > div > label {
+        margin: 0 0 0 10px;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    .cc-m-form-view-element.cc-m-form-submit > div > div > label > a {
+        color: #0000EE !important;
+        text-decoration: underline;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    #m887adadb0975d325_dataprivacy {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+    .cc-m-form-view-element.cc-m-form-submit > div > input {
+        width: 230px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin: 70px 0 0;
+        color: #fff;
+        background-color: #F06292 !important;
+        border-radius: 5px;
+        transform: rotate(0.03deg);
+        border: 0;
+    }
+    .cc-m-form-note {
+        display: none;
+    }
+    
+    /*お問い合わせ完了ページ*/
+    .contact_done p {
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+    }
+    .contact_done p:nth-of-type(1) {
+        margin: 0 0 30px;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #008D3F;
+        line-height: 1.5;
+    }
+    .contact_done p:nth-of-type(2) {
+        margin: 0 0 20px;
+        line-height: 2;
+    }
+    .back-to-top {
+        margin: 0 0 70px;
+    }
+    .back-to-top a {
+        display: inline-block;
+        padding: 10px 30px;
+        color: #fff !important;
+        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
+        font-weight: 500;
+        background-color: #f06292;
+        border-radius: 5px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            padding: 60px 0;
+            background-size: cover;
+            background-position: 55%;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        /*フォーム*/
+        .j-module.n.j-formnew {
+            margin: 90px auto 70px;
+        }
+        .cc-m-form-view-element.cc-m-form-text.cc-m-required,
+        .cc-m-form-view-element.cc-m-form-email.cc-m-required,
+        .cc-m-form-view-element.cc-m-form-textarea.cc-m-required {
+            flex-direction: column;
+            padding: 0 0 10px;
+        }
+        .cc-m-form-view-sortable label {
+            width: 100%;
+            margin: 0;
+            padding: 20px 12px;
+            box-sizing: border-box;
+        }
+        .cc-m-form-view-element.cc-m-form-text.cc-m-required > div > input,
+        .cc-m-form-view-element.cc-m-form-email.cc-m-required > div > input,
+        .cc-m-form-view-element.cc-m-form-textarea.cc-m-required > div > textarea,
+        .cc-m-form-view-input-wrapper {
+            width: 100% !important;
+        }
+        .cc-m-form-view-element.cc-m-form-text.cc-m-required > div > input,
+        .cc-m-form-view-element.cc-m-form-email.cc-m-required > div > input,
+        .cc-m-form-view-element.cc-m-form-textarea.cc-m-required > div > textarea {
+            margin: 15px 0 30px;
+        }
+        .cc-m-form-view-element.cc-m-form-textarea.cc-m-required label {
+            padding: 20px 12px;
+        }
+        .cc-m-form-view-element.cc-m-form-submit {
+            padding: 20px 0 0 !important;
+        }
+        .cc-m-form-view-element.cc-m-form-submit > div > input {
+            width: 200px;
+            min-width: 0 !important;
+        }
+    
+        /*お問い合わせ完了ページ*/
+        .contact_done p:nth-of-type(1) {
+            text-align: center;
+            margin: 0 0 30px;
+            font-size: 2.1rem;
+        }
+        .contact_done p:nth-of-type(2) {
+            margin: 0 0 70px;
+        }
+        .back-to-top {
+            text-align: center;
+        }
+    }
+    
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // サブナビを固定
+        if ($(window).width() > 767) {
+            $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/consultation-of-housing/">住<br>ま<br>い<br>の<br>ご<br>相<br>談<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よ<br>く<br>あ<br>る<br>質<br>問<br><span>➟<\/span><\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('div').hasClass('subnavi')) {
+                $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/consultation-of-housing/">住<br>ま<br>い<br>の<br>ご<br>相<br>談<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よ<br>く<br>あ<br>る<br>質<br>問<br><span>➟<\/span><\/a><\/div>');
+            } else if ($(window).width() < 768 && $('div').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // お問い合わせ完了ページのフッターを一番下に固定
+        $('.cc-m-form-view-element.cc-m-form-submit > div > input').click(() => {
+            $('footer').css({'position':'fixed', 'width': '100%', 'bottom': '0'});
+        });
+    });
+//]]>
+</script>

@@ -1,0 +1,531 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    /*アパート案内を固定*/
+    .subnavi {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        line-height: 1.1;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi::before {
+        display: block;
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apartment-icon.png?t=1609638694);
+        padding-bottom: 4px;
+    }
+    
+    /*トップ画像を全画面表示*/
+    .jtpl-title {
+        height: 100vh;
+        background-color: rgba(0, 141, 63, .1);
+    }
+    
+    /*入れ替えを隠すためのアニメーション*/
+    body {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+        70% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+    
+     .jtpl-content__inner {
+        max-width: 100%;
+    }
+    
+    /*FVテキスト*/
+    #cc-m-13719978390 {
+        position: absolute;
+        top: 50%;
+        right: 8%;
+        transform: translateY(-50%);
+    }
+    
+     /*FVのh2テキスト*/
+    #cc-m-header-13719978390 {
+        max-width: 100%;
+        margin: 0;
+        text-align: right;
+        font-size: 4rem;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: .1em;
+        line-height: 1.5;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*FVの英字テキスト*/
+    .slide-image-english-text {
+        display: block;
+        margin-top: 4px;
+        font-size: 1.6rem;
+        letter-spacing: 0.016em;
+        color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        line-height: 1.2;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*ヘッダー固定*/
+    header {
+        position: static;
+        top: -30px;
+    }
+    header.nav_fixed {
+        position: fixed;
+        z-index: 9999;
+        animation: navFixed .3s forwards;
+    }
+    @keyframes navFixed {
+        from {
+            opacity: 0;
+            top: -30px;
+        }
+        to {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    header.nav_fixed.nav_delete {
+        animation: navDelete .3s forwards;
+    }
+    @keyframes navDelete {
+        from {
+            opacity: 1;
+            top: 0px;
+        }
+        to {
+            opacity: 0;
+            top: -30px;
+        }
+    }
+    
+    .aboutus {
+        background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/top-about-bg.jpg?t=1610542539);
+    }
+    
+    /*選ばれる理由のカラム*/
+    #cc-m-13721852290 {
+        padding: 0 50px 70px !important;
+        background-color: #EEF5EE;    
+    }
+    
+    /*選ばれる理由の各カラム*/
+    #cc-m-13721860390,
+    #cc-m-13722034590,
+    #cc-m-13722038290 {
+        position: relative;
+        padding: 0;
+    }
+
+    /*選ばれる理由の写真*/
+    #cc-m-13721860390 img,
+    #cc-m-13722034590 img,
+    #cc-m-13722038290 img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+    }
+    
+    /*事業紹介のカラム*/
+    #cc-m-13722044490 {
+        background-color: #fff;
+        padding-bottom: 10px !important;
+    }
+    
+    /*新築住宅事業の写真*/
+    #cc-m-imagesubtitle-image-13722047890 {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 330px;
+        border-radius: 0 10px 10px 0;
+        object-fit: cover;
+        object-position: 0 100%;
+    }
+    
+    /*リフォーム事業の写真*/
+    #cc-m-imagesubtitle-image-13722047990 {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 330px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    
+    /*アパート事業の写真*/
+    #cc-m-imagesubtitle-image-13722048190 {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 330px;
+        border-radius: 10px 0 0 10px;
+        object-fit: cover;
+    }
+    
+    /*事業紹介のMoreボタン*/
+    .business-link {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 8px 20px;
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: #2d394a;
+        background-color: rgba(255, 255, 255, .8);
+        border-radius: 10px 0 10px 0;
+    }
+    .business-link span {
+        padding-left: 20px;
+        color: #008D3F;
+        font-size: 1.6rem;
+        font-family: 'Quicksand', sans-serif;
+    }
+    .business-link:last-child {
+        border-radius: 10px 0 0 0;
+    }
+    
+    /*お悩みカラムの余白*/
+    /*お悩みの背景色*/
+    #cc-m-13723635590,
+    #cc-m-13723645090 {
+        background-color: #f6f6f6;
+    }
+    #cc-m-13723635590 {
+        padding: 0 50px 30px !important;
+    }
+    #cc-m-13723645090 {
+        padding: 0 50px 70px !important;
+    }
+    
+    .trouble-link {
+        display: block;
+        padding: 20px;
+    }
+    
+    .trouble-item {
+        padding-top: 10px;
+    }
+    
+    /*お悩みイラスト*/
+    #cc-m-imagesubtitle-image-13723635790,
+    #cc-m-imagesubtitle-image-13723662690,
+    #cc-m-imagesubtitle-image-13723662890,
+    #cc-m-imagesubtitle-image-13723662990,
+    #cc-m-imagesubtitle-image-13723663190,
+    #cc-m-imagesubtitle-image-13723663290,
+    #cc-m-imagesubtitle-image-13723663790,
+    #cc-m-imagesubtitle-image-13723664190 {
+        width: 100%;
+        height: 166px;
+        object-fit: contain;
+    }
+    
+    .aboutus-header,
+    .business-header {
+        padding: 150px 0 70px;
+    }
+    
+    .aboutus-header h1,
+    .business-header h1 {
+        font-size: 3.5rem !important;
+    }
+    
+    .aboutus-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 50px 100px;
+    }
+    
+    .aboutus-content-text {
+        max-width: 550px;
+    }
+    
+    .aboutus-content-text h2 {
+        font-size: 2.8rem !important;
+        margin-bottom: 30px;
+    }
+    
+    .aboutus-content-text p {
+        font-size: 1.8rem;
+        line-height: 2;
+    }
+    
+    .reason-text {
+        padding: 30px;
+        height: 161px;
+    }
+    
+    .reason-text h3:first-child {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        /*トップ画像の文言*/
+        #cc-m-13719978390 {
+            padding: 0;
+            width: calc(100% - 40px);
+            left: 50%;
+            right: 0;
+            transform: translateX(-50%);
+        }
+        #cc-m-header-13719978390 {
+            text-align: left;
+        }
+        
+        /*画像のトリミング値*/
+        .jqbga-slider--image--wrap > div:nth-of-type(1) {
+            background-position: 33% 50%;
+        }
+        .jqbga-slider--image--wrap > div:nth-of-type(2) {
+            background-position: 30% 50%;
+        }
+        .jqbga-slider--image--wrap > div:nth-of-type(3) {
+            background-position: 50%;
+        }
+        
+        /*根本建材について*/
+        .aboutus-header {
+            padding: 60px 0 0;
+        }
+        .aboutus-header h1,
+        .business-header h1 {
+            font-size: 2.4rem !important;
+        }
+        .aboutus-content {
+            padding: 0 40px 50px;
+            flex-direction: column;
+            flex-flow: column-reverse;
+        }
+        .aboutus-content h2 {
+            margin: 0 0 20px;
+            font-size: 2.1rem !important;
+            line-height: 1.5;
+            text-align: center !important;
+        }
+        .aboutus-content p {
+            font-size: 1.6rem;
+        }
+        .aboutus-content img {
+            width: 100%;
+            object-fit: contain;
+        }
+        
+        /*選ばれる理由*/
+        #cc-m-13721852290 {
+            padding: 0 20px 30px !important;
+        }
+        .reason-text {
+            height: auto;
+            margin: 0 0 20px;
+            padding: 20px;
+        }
+        .reason-text h3 {
+            margin-bottom: 10px !important;
+            font-size: 2rem !important;
+        }
+        
+        /*根本建材の事業紹介*/
+        .business-header {
+            padding: 60px 0 40px;
+        }
+        #cc-m-imagesubtitle-image-13722047890,
+        #cc-m-imagesubtitle-image-13722047990 {
+            margin: 0 0 10px;
+        }
+        #cc-m-imagesubtitle-image-13722047890,
+        #cc-m-imagesubtitle-image-13722047990,
+        #cc-m-imagesubtitle-image-13722048190 {
+            border-radius: 0;
+        }
+        .business-link {
+            font-size: 2rem;
+        }
+        
+        /*たとえば、こんなお悩み*/
+        #cc-m-13723629590 .heading-decoration::before {
+          height: 110px;
+        }
+        #cc-m-13723635590 {
+            padding: 0 20px 0 !important;
+        }
+        #cc-m-13723645090 {
+            padding: 0 20px 40px !important;
+        }
+        .trouble-link {
+            margin: 0 0 20px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        /*現在ページ*/
+        #cc-nav-view-2470085590 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+        }
+        
+        /*ヘッダーホバーアニメーション*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            position: relative;
+            display: inline-block;
+        }
+        #cc-nav-view-2470085490 > a::after,
+        #cc-nav-view-2470085790 > a::after,
+        #cc-nav-view-2470085890 > a::after,
+        #cc-nav-view-2470085990 > a::after,
+        #cc-nav-view-2470086090 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+        }
+        #cc-nav-view-2470085590 > a:hover,
+        #cc-nav-view-2470085490 > a:hover,
+        #cc-nav-view-2470085790 > a:hover,
+        #cc-nav-view-2470085890 > a:hover,
+        #cc-nav-view-2470085990 > a:hover,
+        #cc-nav-view-2470086090 > a:hover {
+            opacity: 1;
+        }
+        #cc-nav-view-2470085490 > a:hover::after,
+        #cc-nav-view-2470085790 > a:hover::after,
+        #cc-nav-view-2470085890 > a:hover::after,
+        #cc-nav-view-2470085990 > a:hover::after,
+        #cc-nav-view-2470086090 > a:hover::after {
+            transform: scale(1, 1);
+        }
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1399px) {
+        .trouble-item p:first-child {
+            font-size: 1.5rem;
+            margin: 0 0 0 -20px;
+        }
+    }
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // アパート案内を固定
+        if ($(window).width() > 767) {
+            $('body').prepend('<a class="subnavi" href="https://www.nemoto-k.net/apartment/">桐<br>生<br>周<br>辺<br>の<br>賃<br>貸<br>物<br>件<\/a>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('a').hasClass('subnavi')) {
+                $('body').prepend('<a class="subnavi" href="https://www.nemoto-k.net/apartment/">桐<br>生<br>周<br>辺<br>の<br>賃<br>貸<br>物<br>件<\/a>');
+            } else if ($(window).width() < 768 && $('a').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // メイン画像内のaタグを削除
+        $('#cc-m-header-13719978390').unwrap();
+        
+        // ヘッダーをメイン画像の下に配置
+        $('.jtpl-title').after($('.jtpl-header'));
+        
+        // メイン画像内にロゴ追加
+        $('#cc-m-header-13719978390').before('<img src="https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/logo.png?t=1609008916">');
+        
+        // メイン画像内に英字追加
+        $('#cc-m-header-13719978390').after('<span class="slide-image-english-text">Building a Home with a Woman\'s Perspective.<\/span>');
+        
+        // ポイントリボン1追加
+        $('#cc-m-13721860390').append('<img src="https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/point1.png?t=1609213458" style="position: absolute; top: 0; border-radius: 10px 0 0 0; width: auto; height: auto">');
+        
+        // ポイントリボン2追加
+        $('#cc-m-13722034590').append('<img src="https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/point2.png?t=1609233391" style="position: absolute; top: 0; border-radius: 10px 0 0 0; width: auto; height: auto">');
+        
+        // ポイントリボン3追加
+        $('#cc-m-13722038290').append('<img src="https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/point3.png?t=1609233402" style="position: absolute; top: 0; border-radius: 10px 0 0 0; width: auto; height: auto">');
+        
+        // 事業紹介のカラム隙間
+        let windowWidth = $(window).width();
+        let columnWidth = (windowWidth-20)/3;
+        $(window).resize(() => {
+            let windowWidth = $(window).width();
+            let columnWidth = (windowWidth-20)/3;
+            $('#cc-matrix-3851385490').parent().css('width', columnWidth);
+            $('#cc-matrix-3851385490').parent().css('padding-right', '10px');
+            $('#cc-matrix-3851385690').parent().css('width', columnWidth);
+            $('#cc-matrix-3851385690').parent().css('padding-right', '10px');
+            $('#cc-matrix-3851385590').parent().css('width', columnWidth);
+        });
+        $('#cc-matrix-3851385490').parent().css('width', columnWidth);
+        $('#cc-matrix-3851385490').parent().css('padding-right', '10px');
+        $('#cc-matrix-3851385690').parent().css('width', columnWidth);
+        $('#cc-matrix-3851385690').parent().css('padding-right', '10px');
+        $('#cc-matrix-3851385590').parent().css('width', columnWidth);
+        
+        // 事業紹介のMoreボタンを追加
+        $('#cc-m-imagesubtitle-image-13722047890').after('<div class="business-link">新築住宅<span>More ➟<\/span><\/div>');
+        $('#cc-m-imagesubtitle-image-13722047990').after('<div class="business-link">リフォーム<span>More ➟<\/span><\/div>');
+        $('#cc-m-imagesubtitle-image-13722048190').after('<div class="business-link">アパート<span>More ➟<\/span><\/div>');
+        
+        // お悩みをaタグで囲う（編集時コメントアウト）
+        $('#cc-matrix-3851937390').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851937590').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851937690').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851937490').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851941090').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851941390').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851941290').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        $('#cc-matrix-3851941190').wrap('<a class="trouble-link" style="border-radius: 10px; background-color: #fff;" href="https://www.nemoto-k.net/consultation-of-housing/">');
+        
+        // ヘッダーを上部固定
+        if ($('header').scrollTop()) {
+            $('header').addClass('nav_fixed');
+        };
+        $(window).scroll(() => {
+            $('header').addClass('nav_fixed');
+            if (!$(this).scrollTop()) {
+                $('header').addClass('nav_delete');
+                setTimeout(() => {
+                    $('header').removeClass('nav_fixed');
+                    $('header').removeClass('nav_delete');
+                }, 300);
+            }
+        });
+    });
+//]]>
+</script>

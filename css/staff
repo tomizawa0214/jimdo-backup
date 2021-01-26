@@ -1,0 +1,332 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*横幅1600pxまで*/
+    .j-module.n.j-hgrid {
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    } 
+    
+    /*パンくずリスト非表示*/
+    .jtpl-breadcrumb.breadcrumb-options {
+        display: none;
+    }
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+        background-color: #fff;
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを削除*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*サブナビを固定*/
+    .subnavi {
+        position: fixed;
+        padding-top: 88px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi a {
+        display: block;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+    }
+    .subnavi a:first-child {
+        margin-bottom: 40px;
+    }
+    .subnavi span {
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    
+    .lower-header {
+        position: relative;
+        padding: 70px 0;
+        background-position: center;
+    }
+    .lower-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header h1 {
+        font-size: 4rem !important;
+        letter-spacing: .1em;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header p {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    .heading-decoration {
+        font-size: 3rem !important;
+        padding: 150px 0 70px;
+    }
+    
+    /*ごあいさつ*/
+    #cc-m-13733015590 > div:first-of-type {
+        width: 300px !important;
+        padding: 0 50px 0 0;
+    }
+    #cc-m-13733015590 div:nth-of-type(3) {
+        width: calc(100% - 350px) !important;
+        padding: 0;
+    }
+    #cc-m-13733015790 img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    #cc-m-13733015690 > p:nth-of-type(2) {
+        margin: 40px 0 0;
+    }
+    
+    /*写真を16:9に指定*/
+    #cc-m-13733017690 figure,
+    #cc-m-13733052690 figure,
+    #cc-m-13733053490 figure,
+    #cc-m-13733053590 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13733017690 figure::before,
+    #cc-m-13733052690 figure::before,
+    #cc-m-13733053490 figure::before,
+    #cc-m-13733053590 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-13733017690 img,
+    #cc-m-13733052690 img,
+    #cc-m-13733053490 img,
+    #cc-m-13733053590 img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    /*カラム下隙間*/
+    #cc-m-13733017690,
+    #cc-m-13733053490 {
+        margin: 0 auto 10px;
+    }
+    #cc-m-13733053590 {
+        margin: 0 auto 150px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*スマホ用サブナビ*/
+        .subnavi-sp {
+            position: fixed;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+            z-index: 9998;
+            background-color: rgba(45, 57, 74, .6);
+            box-sizing: border-box;
+        }
+        .subnavi-sp a {
+            display: inline-block;
+            padding: 10px 30px;
+            width: 100%;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f06292;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            padding: 60px 0;
+            background-size: cover;
+            background-position: 55%;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        .heading-decoration {
+            padding: 90px 20px 60px !important;
+        }
+        .heading-decoration::before {
+            top: 58%;
+        }
+        
+       /*ごあいさつ*/
+        #cc-m-13733015590 > div:first-of-type {
+            margin: 0 0 20px;
+            padding: 0;
+        }
+        #cc-m-13733015790 img {
+            width: 70%;
+        }
+    
+        /*カラム下隙間*/
+        #cc-m-13733017690,
+        #cc-m-13733052690,
+        #cc-m-13733053490,
+        #cc-m-13733053590 {
+            margin: 0;
+        }
+        #cc-m-13733017690 .cc-m-hgrid-column,
+        #cc-m-13733052690 .cc-m-hgrid-column,
+        #cc-m-13733053490 .cc-m-hgrid-column,
+        #cc-m-13733053590 .cc-m-hgrid-column {
+            margin: 0 auto 10px;
+        }
+        #cc-m-13733053590 {
+            margin: 0 auto 60px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        /*現在ページ*/
+        #cc-nav-view-2470086090 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+        }
+        
+        /*ヘッダーホバーアニメーション*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            position: relative;
+            display: inline-block;
+        }
+        #cc-nav-view-2470085590 > a::after,
+        #cc-nav-view-2470085490 > a::after,
+        #cc-nav-view-2470085790 > a::after,
+        #cc-nav-view-2470085890 > a::after,
+        #cc-nav-view-2470085990 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+        }
+        #cc-nav-view-2470085590 > a:hover,
+        #cc-nav-view-2470085490 > a:hover,
+        #cc-nav-view-2470085790 > a:hover,
+        #cc-nav-view-2470085890 > a:hover,
+        #cc-nav-view-2470085990 > a:hover,
+        #cc-nav-view-2470086090 > a:hover {
+            opacity: 1;
+        }
+        #cc-nav-view-2470085590 > a:hover::after,
+        #cc-nav-view-2470085490 > a:hover::after,
+        #cc-nav-view-2470085790 > a:hover::after,
+        #cc-nav-view-2470085890 > a:hover::after,
+        #cc-nav-view-2470085990 > a:hover::after {
+            transform: scale(1, 1);
+        }
+    }
+    
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // サブナビを固定
+        if ($(window).width() > 767) {
+            $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/company/">会<br>社<br>案<br>内<br><span>➟<\/span><\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('div').hasClass('subnavi')) {
+                $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/company/">会<br>社<br>案<br>内<br><span>➟<\/span><\/a><\/div>');
+            } else if ($(window).width() < 768 && $('div').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // スマホ用サブナビ
+        if ($(window).width() < 768) {
+            $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/company/">会社案内<\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('div').hasClass('subnavi-sp')) {
+                $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/company/">会社案内<\/a><\/div>');
+            } else if ($(window).width() > 767 && $('div').hasClass('subnavi-sp')) {
+                $('.subnavi-sp').remove();
+            }
+        });
+        
+        // ギャラリー写真のカラム隙間
+        let columnWidth = ($('#cc-m-13733017690').width() - 30)/4;
+        $('#cc-m-13733017690 .cc-m-hgrid-column, #cc-m-13733052690 .cc-m-hgrid-column, #cc-m-13733053490 .cc-m-hgrid-column, #cc-m-13733053590 .cc-m-hgrid-column').css('width', columnWidth);
+        $('#cc-m-13733017690 .cc-m-hgrid-column, #cc-m-13733052690 .cc-m-hgrid-column, #cc-m-13733053490 .cc-m-hgrid-column, #cc-m-13733053590 .cc-m-hgrid-column').css('padding', '0 10px 0 0');
+        $('#cc-m-13733017690 .cc-m-hgrid-column.last, #cc-m-13733052690 .cc-m-hgrid-column.last, #cc-m-13733053490 .cc-m-hgrid-column.last, #cc-m-13733053590 .cc-m-hgrid-column.last').css('padding', '0');
+        $(window).resize(() => {
+            let columnWidth = ($('#cc-m-13733017690').width() - 30)/4;
+            $('#cc-m-13733017690 .cc-m-hgrid-column, #cc-m-13733052690 .cc-m-hgrid-column, #cc-m-13733053490 .cc-m-hgrid-column, #cc-m-13733053590 .cc-m-hgrid-column').css('width', columnWidth);
+            $('#cc-m-13733017690 .cc-m-hgrid-column, #cc-m-13733052690 .cc-m-hgrid-column, #cc-m-13733053490 .cc-m-hgrid-column, #cc-m-13733053590 .cc-m-hgrid-column').css('padding', '0 10px 0 0');
+            $('#cc-m-13733017690 .cc-m-hgrid-column.last, #cc-m-13733052690 .cc-m-hgrid-column.last, #cc-m-13733053490 .cc-m-hgrid-column.last, #cc-m-13733053590 .cc-m-hgrid-column.last').css('padding', '0');
+        });
+    });
+//]]>
+</script>

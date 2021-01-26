@@ -1,0 +1,304 @@
+
+<style type="text/css">
+/*<![CDATA[*/
+    body {
+        padding-top: 88px;
+    }
+    
+    /*横幅1600pxまで*/
+    #cc-m-13729884290 {
+        max-width: 1400px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    } 
+    
+    /*パンくずリスト非表示*/
+    .jtpl-breadcrumb.breadcrumb-options {
+        display: none;
+    }
+    
+    /*見出し画像は幅100%*/
+    #content_area > div > div:first-child  {
+        padding: 0;
+        margin: 0 -100px;
+    }
+    
+    .jtpl-content__inner {
+        max-width: calc(100% - 200px);
+    }
+    
+    .jtpl-header {
+        position: fixed;
+        z-index: 9998;
+    }
+    
+    /*サブナビバーを削除*/
+    .jtpl-subnavigation.subnavigation-colors {
+        display: none;
+    }
+    
+    /*サブナビを固定*/
+    .subnavi {
+        position: fixed;
+        padding-top: 88px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) rotate(0.03deg);
+        z-index: 9999;
+    }
+    .subnavi a {
+        display: block;
+        padding: 20px 15px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+        background-color: #008D3F;
+        border-radius: 5px 0 0 5px;
+    }
+    .subnavi a:first-child {
+        margin-bottom: 40px;
+    }
+    .subnavi span {
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    
+    .lower-header {
+        position: relative;
+        padding: 70px 0;
+        background-position: center;
+    }
+    .lower-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 141, 63, .3)
+    }
+    .lower-header h1 {
+        font-size: 4rem !important;
+        letter-spacing: .1em;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    .lower-header p {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    }
+    
+    /*新築施行事例一覧*/
+    .heading-decoration {
+        font-size: 3rem !important;
+        padding: 150px 0 70px;
+    }
+    /*サムネイル一覧のカラム*/
+    #cc-m-13729884290 {
+        padding: 0 0 150px !important;
+    }
+    /*サムネイル配下の余白削除*/
+    #cc-m-13729884290 div {
+        padding: 0;
+    }
+    /*写真を16:9に指定*/
+    #cc-m-13729884290 figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    #cc-m-13729884290 figure::before {
+        content: '';
+        display: block;
+        padding-top: 56.25%; 
+    }
+    #cc-m-13729884290 img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+    }
+    /*サムネイルの間隔を指定*/
+    .cc-m-hgrid-column > div {
+        display: grid;
+        gap: 20px;
+    }
+    
+    @media screen and (max-width: 767px) {
+        body {
+            padding-top: 68px;
+        }
+        
+        /*スマホ用サブナビ*/
+        .subnavi-sp {
+            position: fixed;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+            z-index: 9998;
+            background-color: rgba(45, 57, 74, .6);
+            box-sizing: border-box;
+        }
+        .subnavi-sp a {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f06292;
+            border-radius: 5px;
+        }
+        
+        /*トップ画像*/
+        .lower-header {
+            padding: 60px 0;
+            background-size: cover;
+        }
+        .lower-header h1 {
+            font-size: 3rem !important;
+        }
+        
+         /*コンテンツ幅*/
+        .jtpl-content__inner {
+            max-width: calc(100% - 40px);
+        }
+        
+        /*新築施工事例一覧*/
+        .heading-decoration {
+            padding: 90px 20px 60px !important;
+        }
+        .heading-decoration::before {
+            top: 58%;
+        }
+        #cc-m-13729884290 {
+            padding: 0 0 40px !important;
+        }
+        #cc-m-13729884290 .cc-m-hgrid-column {
+            margin: 0 0 20px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        body {
+            padding: 88px 0 59px;
+        }
+        /*現在ページ*/
+        #cc-nav-view-2470085790 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+        }
+        
+        /*ヘッダーホバーアニメーション*/
+        #cc-nav-view-2470085590 > a,
+        #cc-nav-view-2470085490 > a,
+        #cc-nav-view-2470085790 > a,
+        #cc-nav-view-2470085890 > a,
+        #cc-nav-view-2470085990 > a,
+        #cc-nav-view-2470086090 > a {
+            position: relative;
+            display: inline-block;
+        }
+        #cc-nav-view-2470085590 > a::after,
+        #cc-nav-view-2470085490 > a::after,
+        #cc-nav-view-2470085890 > a::after,
+        #cc-nav-view-2470085990 > a::after,
+        #cc-nav-view-2470086090 > a::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #F06292;
+            transform: scale(0, 1);
+            transform-origin: center top;
+            transition: transform .3s;
+        }
+        #cc-nav-view-2470085590 > a:hover,
+        #cc-nav-view-2470085490 > a:hover,
+        #cc-nav-view-2470085790 > a:hover,
+        #cc-nav-view-2470085890 > a:hover,
+        #cc-nav-view-2470085990 > a:hover,
+        #cc-nav-view-2470086090 > a:hover {
+            opacity: 1;
+        }
+        #cc-nav-view-2470085590 > a:hover::after,
+        #cc-nav-view-2470085490 > a:hover::after,
+        #cc-nav-view-2470085890 > a:hover::after,
+        #cc-nav-view-2470085990 > a:hover::after,
+        #cc-nav-view-2470086090 > a:hover::after {
+            transform: scale(1, 1);
+        }
+        
+        footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        
+        /*.jtpl-section {*/
+        /*    margin-bottom: calc(100vh - 147px);*/
+        /*}*/
+    }
+    
+  
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    $(document).ready(function(){
+        // サブナビを固定
+        if ($(window).width() > 768) {
+            $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/new-house/">新<br>築<br>住<br>宅<br>事<br>業<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新<br>築<br>の<br>流<br>れ<br><span>➟<\/span><\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() > 767 && !$('div').hasClass('subnavi')) {
+                $('body').prepend('<div class="subnavi"><a href="https://www.nemoto-k.net/new-house/">新<br>築<br>住<br>宅<br>事<br>業<br><span>➟<\/span><\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新<br>築<br>の<br>流<br>れ<br><span>➟<\/span><\/a><\/div>');
+            } else if ($(window).width() < 768 && $('div').hasClass('subnavi')) {
+                $('.subnavi').remove();
+            }
+        });
+        
+        // スマホ用サブナビ
+        if ($(window).width() < 768) {
+            $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/new-house/">新築住宅事業<\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新築の流れ<\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('div').hasClass('subnavi-sp')) {
+                $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/new-house/">新築住宅事業<\/a><a href="https://www.nemoto-k.net/new-house/flow-of-new-construction/">新築の流れ<\/a><\/div>');
+            } else if ($(window).width() > 767 && $('div').hasClass('subnavi-sp')) {
+                $('.subnavi-sp').remove();
+            }
+        });
+        
+        // サムネイルのカラム隙間
+        let columnWidth = ($('#cc-m-13729884290').width() -60)/4;
+        $(window).resize(() => {
+            let columnWidth = ($('#cc-m-13729884290').width() -60)/4;
+            $('.cc-m-hgrid-column').css('width', columnWidth);
+            $('.cc-m-hgrid-column').css('padding-right', '20px');
+            $('.cc-m-hgrid-column.last').css('padding', '0');
+        });
+        $('.cc-m-hgrid-column').css('width', columnWidth);
+        $('.cc-m-hgrid-column').css('padding-right', '20px');
+        $('.cc-m-hgrid-column.last').css('padding', '0');
+    });
+//]]>
+</script>
