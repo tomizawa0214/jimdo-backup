@@ -11,7 +11,13 @@
         
         let sp = ua.indexOf('iPhone') > -1 ||(ua.indexOf('Android') > -1 && ua.indexOf('Mobile') > -1)
         
-        new ViewportExtra(sp ? 375 : 1200)
+        let tab = !sp && (
+            ua.indexOf('iPad') > -1 ||
+            (ua.indexOf('Macintosh') > -1 && 'ontouchend' in document) ||
+            ua.indexOf('Android') > -1
+        )
+        
+        new ViewportExtra(tab ? 1200 : 375)
     })()
 //]]>
 </script>
@@ -31,7 +37,8 @@
     
     .j-module.n.j-text,
     .j-module.n.j-imageSubtitle,
-    .j-module.n.j-htmlCode {
+    .j-module.n.j-htmlCode,
+    .j-module.n.j-googlemaps {
         padding: 0;
     }
     
@@ -99,20 +106,38 @@
     
     /*お問い合わせ*/
     .contact-bg {
+        margin: 0 -100px;
         padding: 70px 0;
         background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/top-contact-bg.jpg?t=1610542549);
     }
-    #cc-m-13723681890 {
+    .contact-bg > div:nth-of-type(1) {
         max-width: 1150px;
         margin: 0 auto;
     }
-    #cc-m-13723682390 {
+    .contact-bg > div:nth-of-type(2) {
         padding: 0 50px 50px !important;
         margin: 0 auto;
-        max-width: 1150px;
+        max-width: 1150px !important;
         background-color: #fff;
         box-sizing: border-box;
         border-radius: 0 0 10px 10px;
+    }
+    .contact-decoration {
+        display: inline-block;
+        font-size: 2.8rem !important;
+        padding: 70px 0px;
+        text-align: center !important;
+        line-height: 1.5 !important;
+    }
+    .contact-decoration::before {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
+        padding-right: 30px;
+    }
+    .contact-decoration::after {
+        content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
+        display: inline-block;
+        transform: scaleX(-1);
+        padding-right: 30px;
     }
     
     #contentfooter a {
@@ -191,12 +216,12 @@
         background-repeat: no-repeat;
         background-position: 52% 50%;
     }
-    #cc-m-13724777090 {
+    #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
         max-width: 1065px;
         margin: 0 auto 30px;
         box-sizing: border-box;
     }
-    #cc-m-13739004490 {
+    #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) {
         max-width: 1065px;
         margin: 0 auto 70px;
         box-sizing: border-box;
@@ -242,6 +267,11 @@
         padding: 10px 30px;
         right: 30px;
         bottom: 30px;
+    }
+    
+    .jtpl-footer__inner {
+        max-width: 1400px;
+        padding: 20px 100px;
     }
     
     @media screen and (max-width: 767px) {
@@ -325,11 +355,13 @@
         .j-module h2 {
             font-size: 2.1rem !important;
         }
-        .heading-decoration {
+        .heading-decoration,
+        .contact-decoration {
             position: relative;
             padding: 60px 20px !important;
         }
-        .heading-decoration::before {
+        .heading-decoration::before,
+        .contact-decoration::before {
           content: "";
           position: absolute;
           top: 50%;
@@ -342,19 +374,21 @@
           border-right-color: transparent;
           transform: translate(-50%, -50%);
         }
-        .heading-decoration::after {
+        .heading-decoration::after,
+        .contact-decoration::after {
             display: none;
         }
         
         /*お問い合わせ*/
-        #cc-m-13723681890 .heading-decoration::before {
+        .contact-bg {
+            margin: 0 -20px;
+            padding: 40px 20px;
+        }
+        .contact-bg > div:nth-of-type(1) .contact-decoration::before {
             top: 54%;
             height: 100px;
         }
-        .contact-bg {
-            padding: 40px 20px;
-        }
-        #cc-m-13723682390 {
+        .contact-bg > div:nth-of-type(2) {
             padding: 0 20px 20px !important;
         }
         address > img:first-of-type {
@@ -391,12 +425,10 @@
         }
         
         /*お客様の声*/
-        #cc-m-13724777090,
-        #cc-m-13739004490 {
+        #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
             margin: 0;
-            padding: 0 40px !important;
         }
-        #cc-m-13739004490 {
+        #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) {
             margin: 0 0 20px;
         }
         .voice-header-decoration {
@@ -406,7 +438,7 @@
         .voice-reform {
             width: 100%;
             height: auto;
-            margin: 0 0 20px;
+            margin: 0 0 40px;
             padding: 20px 20px 20px 0;
             text-align: right;
             box-sizing: border-box;
@@ -439,6 +471,10 @@
         /*フッター*/
         .jtpl-footer__inner {
             padding: 20px;
+        }
+        .j-meta-links,
+        .j-admin-links {
+            padding: 0;
         }
     }
     
@@ -510,19 +546,18 @@
             }
         });
         
-        // お問い合わせのカラム隙間削除
-        $('#cc-matrix-3851947890').parent().css({'padding': '0', 'width': '50%' });
-        $('#cc-matrix-3851947990').parent().css({'width': '50%', 'height': '100%' });
-        $('#cc-m-map-13723701690').children().css('height', '332px');
-        $('#cc-m-map-13723701690 iframe').css('height', '332px');
-        
         // お問い合わせの背景
-        $('#cc-m-13723681890, #cc-m-13723682390').wrapAll('<div class="contact-bg"><\/div>');
+        $('#content_area > div:nth-of-type(2) > div:nth-last-of-type(5), #content_area > div:nth-of-type(2) > div:nth-last-of-type(4)').wrapAll('<div class="contact-bg"><\/div>');
+        
+        // お問い合わせのカラム隙間削除
+        $('.contact-bg > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)').parent().css({'padding': '0', 'width': '50%' });
+        $('.contact-bg > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)').parent().css({'width': '50%', 'height': '100%' });
+        $('.contact-bg > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) .j-module.n.j-googlemaps').children().css('height', '332px');
+        $('.contact-bg > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) iframe').css('height', '332px');
         
         // お客様の声カラム隙間
-        $('#cc-matrix-3852298190, #cc-matrix-3857219990').parent().css({'width': 'auto', 'padding-right': '30px'});
-        $('#cc-matrix-3852298390, #cc-matrix-3857220190').parent().css({'width': 'auto', 'padding-right': '30px'});
-        $('#cc-matrix-3852298290, #cc-matrix-3857220090').parent().css({'width': 'auto', 'float': 'left'});
+        $('#content_area > div:nth-of-type(2) > div:nth-last-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1), #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1), #cc-matrix-3857220190, #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1), #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)').parent().css({'width': 'auto', 'padding-right': '30px'});
+        $('#content_area > div:nth-of-type(2) > div:nth-last-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1), #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) > div:nth-of-type(5) > div:nth-of-type(1)').parent().css({'width': 'auto', 'float': 'left'});
         
         // footer作成
         $('.jtpl-main.cc-content-parent').append('<footer><\/footer>');
