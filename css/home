@@ -281,6 +281,11 @@
         margin-bottom: 20px;
     }
     
+    /*お問い合わせ*/
+    .contact-bg {
+        margin: 0;
+    }
+    
     @media screen and (max-width: 767px) {
         /*トップ画像の文言*/
         #cc-m-13719978390 {

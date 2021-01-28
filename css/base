@@ -181,11 +181,11 @@
     }
     
     .address-fax {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .address-fax span {
         padding-right: 8px;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .address-mail {
@@ -216,23 +216,25 @@
         background-repeat: no-repeat;
         background-position: 52% 50%;
     }
-    #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
-        max-width: 1065px;
-        margin: 0 auto 30px;
-        box-sizing: border-box;
-    }
     #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) {
-        max-width: 1065px;
+        max-width: 983px;
         margin: 0 auto 70px;
         box-sizing: border-box;
+        background-color: #fff;
+    }
+    #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
+        max-width: 983px;
+        margin: 0 auto 30px;
+        box-sizing: border-box;
+        background-color: #fff;
     }
     .voice-myhome {
-        width: 305px;
+        width: 277px;
         height: 354px;
         padding: 30px 30px 30px 0;
     }
     .voice-reform {
-        width: 305px;
+        width: 277px;
         height: 410px;
         padding: 30px 30px 30px 0;
     }
@@ -425,11 +427,11 @@
         }
         
         /*お客様の声*/
-        #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
-            margin: 0;
-        }
         #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) {
             margin: 0 0 20px;
+        }
+        #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
+            margin: 0;
         }
         .voice-header-decoration {
             background-position: 50%;

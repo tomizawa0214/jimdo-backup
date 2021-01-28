@@ -7,8 +7,8 @@
     
     /*横幅1600pxまで*/
     #content_area .j-module.n.j-text:not(:first-of-type),
-    #content_area .j-module.n.j-imageSubtitle,
-    #content_area .j-module.n.j-hgrid {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(3),
+    #content_area > div:nth-of-type(2) > div:nth-of-type(4) {
         max-width: 1400px;
         margin: 0 auto;
         box-sizing: border-box;
@@ -106,29 +106,25 @@
         background-position: top 150px left 0;
     }
     
-    /*写真の余白削除*/
-    .j-module.n.j-imageSubtitle  {
-        padding: 0;
-    }
     /*サブ写真上の余白を設定*/
-    .j-module.n.j-hgrid {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(4) {
         padding: 20px 0 150px !important;
     }
     /*写真を16:9に指定*/
-    #content_area .j-module.n.j-imageSubtitle figure,
-    .j-module.n.j-hgrid  figure {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(3) figure,
+    #content_area > div:nth-of-type(2) > div:nth-of-type(4) figure {
         position: relative;
         overflow: hidden;
         border-radius: 10px;
     }
-    #content_area .j-module.n.j-imageSubtitle figure::before,
-    .j-module.n.j-hgrid figure::before {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(3) figure::before,
+    #content_area > div:nth-of-type(2) > div:nth-of-type(4) figure::before {
         content: '';
         display: block;
         padding-top: 56.25%; 
     }
-    #content_area .j-module.n.j-imageSubtitle img,
-    .j-module.n.j-hgrid img {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(3) img,
+    #content_area > div:nth-of-type(2) > div:nth-of-type(4) img {
         position: absolute;
         top: 0;
         right: 0;
@@ -288,16 +284,16 @@
         });
         
         // サムネイルのカラム隙間
-        let columnWidth = ($('.j-module.n.j-hgrid').width() - 40)/3;
+        let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(4)').width() - 40)/3;
         $(window).resize(() => {
-            let columnWidth = ($('.j-module.n.j-hgrid').width() - 40)/3;
-            $('.cc-m-hgrid-column').css('width', columnWidth);
-            $('.cc-m-hgrid-column').css('padding-right', '20px');
-            $('.cc-m-hgrid-column.last').css('padding', '0');
+            let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(4)').width() - 40)/3;
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(4) .cc-m-hgrid-column').css('width', columnWidth);
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(4).cc-m-hgrid-column').css('padding-right', '20px');
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(4) .cc-m-hgrid-column.last').css('padding', '0');
         });
-        $('.cc-m-hgrid-column').css('width', columnWidth);
-        $('.cc-m-hgrid-column').css('padding-right', '20px');
-        $('.cc-m-hgrid-column.last').css('padding', '0');
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(4) .cc-m-hgrid-column').css('width', columnWidth);
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(4) .cc-m-hgrid-column').css('padding-right', '20px');
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(4) .cc-m-hgrid-column.last').css('padding', '0');
     });
 //]]>
 </script>

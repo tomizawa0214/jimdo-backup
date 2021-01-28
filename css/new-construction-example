@@ -124,7 +124,7 @@
         width: 100%;
     }
     /*サムネイルの間隔を指定*/
-    .cc-m-hgrid-column > div {
+    #content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column > div {
         display: grid;
         gap: 20px;
     }
@@ -190,7 +190,7 @@
     
     @media screen and (min-width: 768px) {
         body {
-            padding: 88px 0 59px;
+            padding: 88px 0 0;
         }
         /*現在ページ*/
         #cc-nav-view-2470085790 > a::after {
@@ -244,16 +244,6 @@
         #cc-nav-view-2470086090 > a:hover::after {
             transform: scale(1, 1);
         }
-        
-        footer {
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        
-        /*.jtpl-section {*/
-        /*    margin-bottom: calc(100vh - 147px);*/
-        /*}*/
     }
     
   
@@ -289,16 +279,16 @@
         });
         
         // サムネイルのカラム隙間
-        let columnWidth = ($('#cc-m-13729884290').width() -60)/4;
+        let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(3)').width() -60)/4;
         $(window).resize(() => {
-            let columnWidth = ($('#cc-m-13729884290').width() -60)/4;
-            $('.cc-m-hgrid-column').css('width', columnWidth);
-            $('.cc-m-hgrid-column').css('padding-right', '20px');
-            $('.cc-m-hgrid-column.last').css('padding', '0');
+            let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(3)').width() -60)/4;
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column').css('width', columnWidth);
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column').css('padding-right', '20px');
+            $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column.last').css('padding', '0');
         });
-        $('.cc-m-hgrid-column').css('width', columnWidth);
-        $('.cc-m-hgrid-column').css('padding-right', '20px');
-        $('.cc-m-hgrid-column.last').css('padding', '0');
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column').css('width', columnWidth);
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column').css('padding-right', '20px');
+        $('#content_area > div:nth-of-type(2) > div:nth-of-type(3) .cc-m-hgrid-column.last').css('padding', '0');
     });
 //]]>
 </script>
