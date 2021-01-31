@@ -55,7 +55,8 @@
     }
     .jtpl-logo img {
         height: 58px;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
     
     .jtpl-logo:hover {
@@ -76,7 +77,8 @@
     #cc-nav-view-2470085990 > a,
     #cc-nav-view-2470086090 > a,
     #cc-nav-view-2470087090 > a {
-        transform: rotate(0.03deg); /* シャギーを防ぐ指定 */
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg); /* シャギーを防ぐ指定 */
         color: #2D394A;
         font-weight: 500;
         margin: 0;
@@ -119,7 +121,8 @@
         margin: 0 auto;
         max-width: 1150px !important;
         background-color: #fff;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         border-radius: 0 0 10px 10px;
     }
     .contact-decoration {
@@ -136,7 +139,8 @@
     .contact-decoration::after {
         content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
         display: inline-block;
-        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
         padding-right: 30px;
     }
     
@@ -162,7 +166,8 @@
     .heading-decoration::after {
         content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/heading-decoration.png?t=1609213253);
         display: inline-block;
-        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
         padding-right: 30px;
     }
     
@@ -219,13 +224,15 @@
     #content_area > div:nth-of-type(2) > div:nth-last-of-type(1) {
         max-width: 983px;
         margin: 0 auto 70px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         background-color: #fff;
     }
     #content_area > div:nth-of-type(2) > div:nth-last-of-type(2) {
         max-width: 983px;
         margin: 0 auto 30px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         background-color: #fff;
     }
     .voice-myhome {
@@ -242,12 +249,19 @@
         margin-right: -30px;
         padding-bottom: 30px;
         font-size: 2rem;
-        transform: rotate(0.03deg);
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg);
     }
     .voice-msg-name {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .voice-msg-name p {
         font-size: 1.8rem;
@@ -298,7 +312,8 @@
             height: calc(100vh - 68px);
             padding: 0 20px;
             z-index: 9999;
-            box-shadow: none;
+            -webkit-box-shadow: none;
+                    box-shadow: none;
         }
         .j-nav-variant-nested > ul {
             position: relative;
@@ -340,7 +355,8 @@
             text-decoration: none;
             font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
             background-color: #f6f6f6;
-            box-sizing: border-box; 
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box; 
         }
         .apart-sp::before {
             content: "";
@@ -374,7 +390,8 @@
           border: 5px solid #CBE0CB;
           border-left-color: transparent;
           border-right-color: transparent;
-          transform: translate(-50%, -50%);
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
         }
         .heading-decoration::after,
         .contact-decoration::after {
@@ -443,7 +460,8 @@
             margin: 0 0 40px;
             padding: 20px 20px 20px 0;
             text-align: right;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         .voice-msg-header {
             margin-right: -20px;
@@ -566,14 +584,6 @@
         $('.jtpl-footer.footer-options').appendTo('footer');
         
         $('.jtpl-sidebar.sidebar-options').remove();
-        
-        // // スマホメニューバー対応
-        // const setFillHeight = () => {
-        //     let vh = $(window).innerHeight() * 0.01;
-        //     $('html').css('--vh', `${vh}px`);
-        // }
-        // $(window).resize(setFillHeight);
-        // setFillHeight();
     });
     
     // スマホメニューバー対応

@@ -7,9 +7,11 @@
     
     /*横幅1600pxまで*/
     #content_area > div:nth-child(2) > div:nth-child(n+2):nth-child(-n+6) {
-        max-width: 1400px;
-        margin: 0 auto;
-        box-sizing: border-box;
+        margin: 0 -100px;
+        padding: 0 9% !important;
+        background-color: #f6f6f6;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     } 
     
     /*見出し画像は幅100%*/
@@ -18,13 +20,8 @@
         margin: 0 -100px;
     }
     
-    .jtpl-content {
-        background-color: #F6F6F6;
-    }
-    
     .jtpl-content__inner {
         max-width: calc(100% - 200px);
-        background-color: #F6F6F6;
     }
     
     .jtpl-header {
@@ -43,7 +40,8 @@
         padding-top: 88px;
         top: 50%;
         right: 0;
-        transform: translateY(-50%) rotate(0.03deg);
+        -webkit-transform: translateY(-50%) rotate(0.03deg);
+                transform: translateY(-50%) rotate(0.03deg);
         z-index: 9999;
     }
     .subnavi a {
@@ -142,7 +140,8 @@
     .trouble-header h3::after {
         content: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/consultation-deco.png?t=1610515936);
         display: inline-block;
-        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
         padding-right: 5px;
     }
     #content_area > div:nth-child(2)> div:nth-child(n+3):nth-child(-n+6) .j-module.n.j-imageSubtitle {
@@ -186,7 +185,8 @@
         font-size: 1.8rem;
         font-weight: 500;
         margin: 0 0 10px;
-        transform: rotate(0.03deg);
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg);
     }
     .trouble-text dd {
         margin: 0 0 30px;
@@ -199,13 +199,20 @@
     
     @media screen and (max-width: 767px) {
         body {
-            padding-top: 68px;
+            padding: 68px 0 63px;
+        }
+        
+        #content_area > div:nth-child(2) > div:nth-child(n+2):nth-child(-n+6) {
+            margin: 0 -20px;
+            padding: 0 20px !important;
         }
         
         /*スマホ用サブナビ*/
         .subnavi-sp {
             position: fixed;
+            display: -ms-grid;
             display: grid;
+            -ms-grid-columns: 1fr 10px 1fr;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             width: 100%;
@@ -213,7 +220,8 @@
             bottom: 0;
             z-index: 9998;
             background-color: rgba(45, 57, 74, .6);
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         .subnavi-sp a {
             display: inline-block;
@@ -258,7 +266,8 @@
             border: 5px solid #CBE0CB;
             border-left-color: transparent;
             border-right-color: transparent;
-            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
         }
         .pencil-header h2 {
             text-align: center !important;
@@ -280,63 +289,50 @@
             content: "";
         }
 
-    #content_area > div:nth-child(2)> div:nth-child(n+3):nth-child(-n+6) .j-module.n.j-imageSubtitle {
-        padding: 0 30px;
-        background-color: #fff;
-    } 
-    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure {
-        position: relative;
-        text-align: center !important;
-        overflow: hidden;
-        background-color: #fff;
-    }
-    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure::before {
-        content: '';
-        display: block;
-        padding-top: 56.25%; 
-    }
-    #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        width: 100%;
-    }
-    #content_area > div:nth-child(2) > div:nth-child(5) > div:nth-child(3) img,
-    #content_area > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) img {
-        width:auto;
-        height:auto;
-        max-width:100%;
-        max-height:100%;
-    }
-    .trouble-text {
-        margin: 0 0 50px;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 0 0 10px 10px;
-    }
-    .trouble-text dt {
-        font-size: 1.8rem;
-        font-weight: 500;
-        margin: 0 0 10px;
-        transform: rotate(0.03deg);
-    }
-    .trouble-text dd {
-        margin: 0 0 30px;
-        font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
-        line-height: 1.7;
-    }
-    #content_area div:nth-child(2) div:nth-child(6) .trouble-text {
-        margin: 0 0 150px;    
-    }
+        #content_area > div:nth-child(2)> div:nth-child(n+3):nth-child(-n+6) .j-module.n.j-imageSubtitle {
+            padding: 0 30px;
+            background-color: #fff;
+        } 
+        #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure {
+            position: relative;
+            text-align: center !important;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) figure::before {
+            content: '';
+            display: block;
+            padding-top: 56.25%; 
+        }
+        #content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 100%;
+        }
+        #content_area > div:nth-child(2) > div:nth-child(5) > div:nth-child(3) img,
+        #content_area > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) img {
+            width:auto;
+            height:auto;
+            max-width:100%;
+            max-height:100%;
+        }
+        .trouble-text {
+            margin: 0 0 40px;
+        }
+        #content_area div:nth-child(2) div:nth-child(6) .trouble-text {
+            margin: 0 0 40px;    
+        }
     }
     
     @media screen and (min-width: 768px) and (max-width: 1399px) {
         .trouble-text {
             height: 600px;
-            box-sizing: border-box; 
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box; 
         }
     }
     @media screen and (min-width: 1400px) {
@@ -345,10 +341,10 @@
         }
         .trouble-text {
             height: 500px;
-            box-sizing: border-box; 
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box; 
         }
     }
-    
 /*]]>*/
 </style>
 
@@ -381,15 +377,15 @@
         });
         
         // 賃貸物件一覧のカラム隙間
-        let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
-        $('.cc-m-hgrid-column').css('width', columnWidth);
-        $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
-        $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+        let columnWidth = ($('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6)').width() - 50)/2;
+        $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) .cc-m-hgrid-column').css('width', columnWidth);
+        $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) .cc-m-hgrid-column').css('padding', '0 50px 0 0');
+        $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) div:nth-child(4n-1)').css('padding', '0');
         $(window).resize(() => {
-            let columnWidth = ($('.j-module.n.j-hgrid').width() - 50)/2;
-            $('.cc-m-hgrid-column').css('width', columnWidth);
-            $('.cc-m-hgrid-column').css('padding', '0 50px 0 0');
-            $('.j-module.n.j-hgrid  div:nth-child(4n-1)').css('padding', '0');
+            let columnWidth = ($('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6)').width() - 50)/2;
+            $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) .cc-m-hgrid-column').css('width', columnWidth);
+            $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) .cc-m-hgrid-column').css('padding', '0 50px 0 0');
+            $('#content_area > div:nth-child(2) > div:nth-child(n+3):nth-child(-n+6) div:nth-child(4n-1)').css('padding', '0');
         });
     });
 //]]>

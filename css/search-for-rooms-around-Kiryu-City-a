@@ -10,7 +10,8 @@
     #content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) {
         max-width: 1400px;
         margin: 0 auto;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     } 
     
     /*パンくずリスト非表示*/
@@ -40,9 +41,15 @@
     
     /*トップ画像*/
     .lower-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         height: calc(100vw * 0.285);
         background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apart-top.jpg?t=1610815749);
@@ -119,11 +126,14 @@
         width: 100%;
     }
     .apart-info {
+        display: -ms-grid;
         display: grid;
         gap: 20px;
         margin: 50px 0 70px;
     }
     .apart-info dl {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 0;
     }
@@ -135,12 +145,18 @@
         font-weight: 500;
         background-color: #EEF5EE;
         border-left: 8px solid #008D3F;
-        transform: rotate(0.03deg);
-        box-sizing: border-box;
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg);
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
     .apart-info dd {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         margin: 0 0 0 20px;
         font-family: '游ゴシック Medium','Yu Gothic Medium','游ゴシック体',YuGothic,sans-serif;
     }
@@ -158,7 +174,8 @@
         border-radius: 5px;
         color: #fff !important;
         font-weight: 500;
-        transform: rotate(0.03deg);
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg);
     }
     .contact-btn::before {
         vertical-align: middle;
@@ -168,7 +185,7 @@
     
     @media screen and (max-width: 767px) {
         body {
-            padding-top: 68px;
+            padding: 68px 0 0;
         }
         
         /*トップ画像*/
@@ -205,7 +222,8 @@
             border: 5px solid #CBE0CB;
             border-left-color: transparent;
             border-right-color: transparent;
-            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
         }
         
         /*写真*/
@@ -226,7 +244,10 @@
             margin: 0 0 10px;
         }
         .apart-info dl {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
         .apart-info dt {
             padding: 10px 10px 10px 15px;
@@ -275,9 +296,14 @@
             width: 100%;
             height: 2px;
             background-color: #F06292;
-            transform: scale(0, 1);
-            transform-origin: center top;
+            -webkit-transform: scale(0, 1);
+                    transform: scale(0, 1);
+            -webkit-transform-origin: center top;
+                    transform-origin: center top;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
             transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
         }
         #cc-nav-view-2470085590 > a:hover,
         #cc-nav-view-2470085490 > a:hover,
@@ -292,21 +318,23 @@
         #cc-nav-view-2470085790 > a:hover::after,
         #cc-nav-view-2470085890 > a:hover::after,
         #cc-nav-view-2470086090 > a:hover::after {
-            transform: scale(1, 1);
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
         }
     }
     
     @media screen and (min-width: 768px) and (max-width: 1399px) {
         .apart-info {
+            -ms-grid-columns: 1fr 1fr;
             grid-template-columns: 1fr 1fr;
         }
     }
     @media screen and (min-width: 1400px) {
         .apart-info {
+            -ms-grid-columns: 1fr 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
-    
 /*]]>*/
 </style>
 
@@ -316,12 +344,12 @@
     $(document).ready(function(){
         
         // カラム隙間
-        let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .j-module.n.j-hgrid').width() - 60)/4;
+        let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6)').width() - 60)/4;
         $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column').css('width', columnWidth);
         $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column').css('padding', '0 20px 0 0');
         $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column.last').css('padding', '0');
         $(window).resize(() => {
-            let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .j-module.n.j-hgrid').width() - 60)/4;
+            let columnWidth = ($('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6)').width() - 60)/4;
             $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column').css('width', columnWidth);
             $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column').css('padding', '0 20px 0 0');
             $('#content_area > div:nth-of-type(2) > div:nth-of-type(n+2):nth-of-type(-n+6) .cc-m-hgrid-column.last').css('padding', '0');

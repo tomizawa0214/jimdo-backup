@@ -34,9 +34,15 @@
     
     /*トップ画像*/
     .lower-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         height: calc(100vw * 0.285);
         background-image: url(https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/apart-top.jpg?t=1610815749);
@@ -117,6 +123,8 @@
         background-color: #fff;
     }
     .apart-info dl {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 0;
         padding: 0 0 20px;
@@ -150,7 +158,7 @@
     
     @media screen and (max-width: 767px) {
         body {
-            padding-top: 68px;
+            padding: 68px 0 0;
         }
         
         #content_area > div:nth-of-type(2) > .j-module.n.j-hgrid:not(:nth-last-of-type(-n+2)) {
@@ -158,8 +166,8 @@
             padding: 0 20px !important;
         }
         
-        #content_area > div:nth-of-type(2) > div:nth-last-of-type(5) > .cc-m-hgrid-column {
-            margin: 0 0 50px;
+        #content_area > div:nth-of-type(2) > div:not(:nth-last-of-type(-n+4)) > .cc-m-hgrid-column {
+            margin: 0 0 40px;
         }
         
         /*トップ画像*/
@@ -199,7 +207,10 @@
             margin: 5px 0 0;
         }
         .apart-info dl {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
         .apart-info dt {
             margin: 0 0 5px;
@@ -246,9 +257,14 @@
             width: 100%;
             height: 2px;
             background-color: #F06292;
-            transform: scale(0, 1);
-            transform-origin: center top;
+            -webkit-transform: scale(0, 1);
+                    transform: scale(0, 1);
+            -webkit-transform-origin: center top;
+                    transform-origin: center top;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
             transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
         }
         #cc-nav-view-2470085590 > a:hover,
         #cc-nav-view-2470085490 > a:hover,
@@ -263,7 +279,8 @@
         #cc-nav-view-2470085790 > a:hover::after,
         #cc-nav-view-2470085890 > a:hover::after,
         #cc-nav-view-2470086090 > a:hover::after {
-            transform: scale(1, 1);
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
         }
     }
     
@@ -278,14 +295,17 @@
     }
     @media screen and (min-width: 1400px) {
          .apart-name {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
         .apart-name p:first-child {
             margin: 0 20px 0 0;
         }
     }
-    
 /*]]>*/
 </style>
 
@@ -305,7 +325,6 @@
             $('#content_area > div:nth-of-type(2) > .j-module.n.j-hgrid:not(:nth-last-of-type(-n+2)) .cc-m-hgrid-column').css('padding', '0 50px 0 0');
             $('#content_area > div:nth-of-type(2) > .j-module.n.j-hgrid:not(:nth-last-of-type(-n+2)) div:nth-child(4n-1)').css('padding', '0');
         });
-    }
     });
 //]]>
 </script>

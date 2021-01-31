@@ -10,7 +10,8 @@
     #content_area > div:nth-of-type(2) > div:nth-of-type(n+3):nth-of-type(-n+11) {
         max-width: 1400px;
         margin: 0 auto;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     } 
     
     /*パンくずリスト非表示*/
@@ -44,7 +45,8 @@
         padding-top: 88px;
         top: 50%;
         right: 0;
-        transform: translateY(-50%) rotate(0.03deg);
+        -webkit-transform: translateY(-50%) rotate(0.03deg);
+                transform: translateY(-50%) rotate(0.03deg);
         z-index: 9999;
     }
     .subnavi a {
@@ -129,7 +131,7 @@
     
     @media screen and (max-width: 767px) {
         body {
-            padding-top: 68px;
+            padding: 68px 0 63px;
         }
         
         /*スマホ用サブナビ*/
@@ -140,7 +142,8 @@
             bottom: 0;
             z-index: 9998;
             background-color: rgba(45, 57, 74, .6);
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         .subnavi-sp a {
             display: inline-block;
@@ -153,7 +156,8 @@
             text-decoration: none;
             background-color: #f06292;
             border-radius: 5px;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         
         /*トップ画像*/
@@ -232,9 +236,14 @@
             width: 100%;
             height: 2px;
             background-color: #F06292;
-            transform: scale(0, 1);
-            transform-origin: center top;
+            -webkit-transform: scale(0, 1);
+                    transform: scale(0, 1);
+            -webkit-transform-origin: center top;
+                    transform-origin: center top;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
             transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
         }
         #cc-nav-view-2470085590 > a:hover,
         #cc-nav-view-2470085490 > a:hover,
@@ -249,7 +258,8 @@
         #cc-nav-view-2470085790 > a:hover::after,
         #cc-nav-view-2470085990 > a:hover::after,
         #cc-nav-view-2470086090 > a:hover::after {
-            transform: scale(1, 1);
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
         }
     }
 /*]]>*/

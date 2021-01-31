@@ -37,7 +37,8 @@
         padding-top: 88px;
         top: 50%;
         right: 0;
-        transform: translateY(-50%) rotate(0.03deg);
+        -webkit-transform: translateY(-50%) rotate(0.03deg);
+                transform: translateY(-50%) rotate(0.03deg);
         z-index: 9999;
     }
     .subnavi a {
@@ -101,13 +102,18 @@
         max-width: 962px;
         margin: 150px auto;
         padding: 0;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
     .cc-m-form-view-element.cc-m-form-text.cc-m-required,
     .cc-m-form-view-element.cc-m-form-email.cc-m-required,
     .cc-m-form-view-element.cc-m-form-textarea.cc-m-required {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 0 0 10px;
     }
     .cc-m-form-view-sortable label {
@@ -153,11 +159,13 @@
         height: 300px;
     }
     .cc-m-form-view-element.cc-m-form-textarea.cc-m-required label {
-        align-self: top;
+        -ms-flex-item-align: top;
+            -ms-grid-row-align: top;
+            align-self: top;
         padding: 30px 30px 290px;
     }
     .cc-m-form-view-element.cc-m-form-submit {
-        padding: 60px 0 150px !important;
+        padding: 60px 0 0 !important;
     }
     .cc-m-form-view-element.cc-m-form-submit label {
         min-height: 0 !important;
@@ -166,9 +174,15 @@
         text-align: center;
     }
     .cc-m-form-view-element.cc-m-form-submit > div > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .cc-m-form-view-element.cc-m-form-submit > div > div > label {
         margin: 0 0 0 10px;
@@ -192,7 +206,8 @@
         color: #fff;
         background-color: #F06292 !important;
         border-radius: 5px;
-        transform: rotate(0.03deg);
+        -webkit-transform: rotate(0.03deg);
+                transform: rotate(0.03deg);
         border: 0;
     }
     .cc-m-form-note {
@@ -229,7 +244,35 @@
     
     @media screen and (max-width: 767px) {
         body {
-            padding-top: 68px;
+            padding: 68px 0 63px;
+        }
+        
+        /*スマホ用サブナビ*/
+        .subnavi-sp {
+            position: fixed;
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 10px 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+            bottom: 0;
+            z-index: 9998;
+            background-color: rgba(45, 57, 74, .6);
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        .subnavi-sp a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f06292;
+            border-radius: 5px;
         }
         
         /*トップ画像*/
@@ -254,14 +297,18 @@
         .cc-m-form-view-element.cc-m-form-text.cc-m-required,
         .cc-m-form-view-element.cc-m-form-email.cc-m-required,
         .cc-m-form-view-element.cc-m-form-textarea.cc-m-required {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             padding: 0 0 10px;
         }
         .cc-m-form-view-sortable label {
             width: 100%;
             margin: 0;
             padding: 20px 12px;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
         .cc-m-form-view-element.cc-m-form-text.cc-m-required > div > input,
         .cc-m-form-view-element.cc-m-form-email.cc-m-required > div > input,
@@ -298,7 +345,6 @@
             text-align: center;
         }
     }
-    
 /*]]>*/
 </style>
 
@@ -318,9 +364,16 @@
             }
         });
         
-        // お問い合わせ完了ページのフッターを一番下に固定
-        $('.cc-m-form-view-element.cc-m-form-submit > div > input').click(() => {
-            $('footer').css({'position':'fixed', 'width': '100%', 'bottom': '0'});
+        // スマホ用サブナビ
+        if ($(window).width() < 768) {
+            $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/consultation-of-housing/">住まいのご相談<\/a><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よくある質問<\/a><\/div>');
+        }
+        $(window).resize(() => {
+            if ($(window).width() < 768 && !$('div').hasClass('subnavi-sp')) {
+                $('body').prepend('<div class="subnavi-sp"><a href="https://www.nemoto-k.net/consultation-of-housing/">住まいのご相談<\/a><a href="https://www.nemoto-k.net/consultation-of-housing/question-answer/">よくある質問<\/a><\/div>');
+            } else if ($(window).width() > 767 && $('div').hasClass('subnavi-sp')) {
+                $('.subnavi-sp').remove();
+            }
         });
     });
 //]]>

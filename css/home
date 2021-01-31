@@ -15,7 +15,8 @@
         text-decoration: none;
         background-color: #008D3F;
         border-radius: 5px 0 0 5px;
-        transform: translateY(-50%) rotate(0.03deg);
+        -webkit-transform: translateY(-50%) rotate(0.03deg);
+                transform: translateY(-50%) rotate(0.03deg);
         z-index: 9999;
     }
     .subnavi::before {
@@ -33,7 +34,16 @@
     /*入れ替えを隠すためのアニメーション*/
     body {
         opacity: 0;
-        animation: fadeIn 1s forwards;
+        -webkit-animation: fadeIn 1s forwards;
+                animation: fadeIn 1s forwards;
+    }
+    @-webkit-keyframes fadeIn {
+        70% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
     }
     @keyframes fadeIn {
         70% {
@@ -53,7 +63,8 @@
         position: absolute;
         top: 50%;
         right: 8%;
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
     }
     
      /*FVのh2テキスト*/
@@ -89,7 +100,18 @@
     header.nav_fixed {
         position: fixed;
         z-index: 9999;
-        animation: navFixed .3s forwards;
+        -webkit-animation: navFixed .3s forwards;
+                animation: navFixed .3s forwards;
+    }
+    @-webkit-keyframes navFixed {
+        from {
+            opacity: 0;
+            top: -30px;
+        }
+        to {
+            opacity: 1;
+            top: 0;
+        }
     }
     @keyframes navFixed {
         from {
@@ -102,7 +124,18 @@
         }
     }
     header.nav_fixed.nav_delete {
-        animation: navDelete .3s forwards;
+        -webkit-animation: navDelete .3s forwards;
+                animation: navDelete .3s forwards;
+    }
+    @-webkit-keyframes navDelete {
+        from {
+            opacity: 1;
+            top: 0px;
+        }
+        to {
+            opacity: 0;
+            top: -30px;
+        }
     }
     @keyframes navDelete {
         from {
@@ -142,7 +175,8 @@
         width: 100%;
         height: 300px;
         border-radius: 10px 10px 0 0;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     
     /*事業紹介のカラム*/
@@ -158,8 +192,10 @@
         width: 100%;
         height: 330px;
         border-radius: 0 10px 10px 0;
-        object-fit: cover;
-        object-position: 0 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: 0 100%;
+           object-position: 0 100%;
     }
     
     /*リフォーム事業の写真*/
@@ -169,7 +205,8 @@
         width: 100%;
         height: 330px;
         border-radius: 10px;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     
     /*アパート事業の写真*/
@@ -179,7 +216,8 @@
         width: 100%;
         height: 330px;
         border-radius: 10px 0 0 10px;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     
     /*事業紹介のMoreボタン*/
@@ -237,7 +275,8 @@
     #cc-m-imagesubtitle-image-13723664190 {
         width: 100%;
         height: 166px;
-        object-fit: contain;
+        -o-object-fit: contain;
+           object-fit: contain;
     }
     
     .aboutus-header,
@@ -251,9 +290,15 @@
     }
     
     .aboutus-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 0 50px 100px;
     }
     
@@ -293,7 +338,8 @@
             width: calc(100% - 40px);
             left: 50%;
             right: 0;
-            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
         }
         #cc-m-header-13719978390 {
             text-align: left;
@@ -320,8 +366,12 @@
         }
         .aboutus-content {
             padding: 0 40px 50px;
-            flex-direction: column;
-            flex-flow: column-reverse;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -ms-flex-flow: column-reverse;
+                flex-flow: column-reverse;
         }
         .aboutus-content h2 {
             margin: 0 0 20px;
@@ -334,7 +384,8 @@
         }
         .aboutus-content img {
             width: 100%;
-            object-fit: contain;
+            -o-object-fit: contain;
+               object-fit: contain;
         }
         
         /*選ばれる理由*/
@@ -423,9 +474,14 @@
             width: 100%;
             height: 2px;
             background-color: #F06292;
-            transform: scale(0, 1);
-            transform-origin: center top;
+            -webkit-transform: scale(0, 1);
+                    transform: scale(0, 1);
+            -webkit-transform-origin: center top;
+                    transform-origin: center top;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
             transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s;
         }
         #cc-nav-view-2470085590 > a:hover,
         #cc-nav-view-2470085490 > a:hover,
@@ -440,7 +496,8 @@
         #cc-nav-view-2470085890 > a:hover::after,
         #cc-nav-view-2470085990 > a:hover::after,
         #cc-nav-view-2470086090 > a:hover::after {
-            transform: scale(1, 1);
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
         }
     }
     
