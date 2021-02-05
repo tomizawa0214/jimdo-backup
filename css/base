@@ -171,9 +171,6 @@
         padding-right: 30px;
     }
     
-    .address-fb {
-        padding-left: 30px;
-    }
     .address-address {
         margin: 10px 0 30px;
     }
@@ -412,9 +409,6 @@
         }
         address > img:first-of-type {
             width: 62%;
-        }
-        .address-fb {
-            padding-left: 0;
         }
         .address-address {
             margin: 5px 0 20px;
