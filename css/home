@@ -548,22 +548,24 @@
         $('#cc-m-13722038290').append('<img src="https://u.jimcdn.com/cms/o/s62813ae755a0ffa6/userlayout/img/point3.png?t=1609233402" style="position: absolute; top: 0; border-radius: 10px 0 0 0; width: auto; height: auto">');
         
         // 事業紹介のカラム隙間
-        let windowWidth = $(window).width();
+        let windowWidth = $('body').width();
         let columnWidth = (windowWidth-20)/3;
         $(window).resize(() => {
-            let windowWidth = $(window).width();
+            let windowWidth = $('body').width();
             let columnWidth = (windowWidth-20)/3;
             $('#cc-matrix-3851385490').parent().css('width', columnWidth);
             $('#cc-matrix-3851385490').parent().css('padding-right', '10px');
             $('#cc-matrix-3851385690').parent().css('width', columnWidth);
             $('#cc-matrix-3851385690').parent().css('padding-right', '10px');
             $('#cc-matrix-3851385590').parent().css('width', columnWidth);
+            $('#cc-matrix-3851385590').parent().css('float', 'left');
         });
         $('#cc-matrix-3851385490').parent().css('width', columnWidth);
         $('#cc-matrix-3851385490').parent().css('padding-right', '10px');
         $('#cc-matrix-3851385690').parent().css('width', columnWidth);
         $('#cc-matrix-3851385690').parent().css('padding-right', '10px');
         $('#cc-matrix-3851385590').parent().css('width', columnWidth);
+        $('#cc-matrix-3851385590').parent().css('float', 'left');
         
         // 事業紹介のMoreボタンを追加
         $('#cc-m-imagesubtitle-image-13722047890').after('<div class="business-link">新築住宅<span>More ➟<\/span><\/div>');
